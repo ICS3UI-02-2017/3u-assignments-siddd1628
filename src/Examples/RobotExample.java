@@ -56,6 +56,7 @@ public class RobotExample {
         //put the thing down
         karel.putThing();
         karel.move();
+       // ??
         
         
      
