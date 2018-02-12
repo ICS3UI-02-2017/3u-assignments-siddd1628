@@ -43,6 +43,12 @@ public class Assignment1 {
         new Wall(daniTown, 3, 5, Direction.EAST);
         
         //Create another wall
-     
+        new Wall(daniTown, 4, 5, Direction.EAST);
+        
+         //Create another wall
+        new Wall(daniTown, 4, 5, Direction.SOUTH);
+        
+         //Create another wall
+        new Wall(daniTown, 4, 4, Direction.SOUTH);
     }
 }
