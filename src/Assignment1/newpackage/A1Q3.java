@@ -62,6 +62,65 @@ public class A1Q3 {
          //Create a wall
         new Wall(daniTown, 3, 4, Direction.EAST);
         
+         //have karel go forward
+        karel.move(1);
         
+         // have karel pick up the flag
+        karel.pickThing();
+        
+          // turn karel around
+        karel.turnLeft();
+        
+         //have karel go forward
+        karel.move(1);
+        
+        // turn karel around
+        karel.turnRight();
+        
+        //have karel go forward
+        karel.move(1);
+        
+        // turn karel around
+        karel.turnLeft();
+        
+        //have karel go forward
+        karel.move(2);
+        
+        // turn karel around
+        karel.turnRight();
     
+         //have karel go forward
+        karel.move(1);
+        
+        // make karel drop the flag he's carrying
+        karel.putThing();
+        
+        //have karel go forward
+        karel.move(1);
+        
+         // turn karel around
+        karel.turnRight();
+        
+         //have karel go forward
+        karel.move(1);
+        
+        // turn karel around
+        karel.turnLeft();
+        
+         //have karel go forward
+        karel.move(1);
+        
+          // turn karel around
+        karel.turnRight();
+        
+         //have karel go forward
+        karel.move(2);
+        
+         // turn karel around
+        karel.turnLeft();
+        
+        
+        
+        
+        
 }}
