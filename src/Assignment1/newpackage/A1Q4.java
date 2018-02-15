@@ -8,6 +8,7 @@ import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.RobotSE;
 import becker.robots.Wall;
+import java.awt.Color;
 
 /**
  *
@@ -20,11 +21,20 @@ public class A1Q4 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        //  Create a new city 
          City daniTown = new City();
         
         // Create a new robot to put into the city
         RobotSE karel = new RobotSE(daniTown, 0, 0, Direction.SOUTH);
+        
+          // set the color of the robot
+        karel.setColor(Color.BLUE);
+        
+         // Create a new robot to put into the city
+        RobotSE susan = new RobotSE(daniTown, 0, 1, Direction.SOUTH);
+        
+          // set the color of the robot
+        susan.setColor(Color.PINK);
         
         //Create a wall
         new Wall(daniTown, 1, 1, Direction.WEST);
@@ -33,6 +43,36 @@ public class A1Q4 {
         new Wall(daniTown, 0, 1, Direction.WEST);
         
          //Create a wall
-        new Wall(daniTown, 0, 1, Direction.NORTH);
+        new Wall(daniTown, 1, 1, Direction.SOUTH);
+        
+         //have karel go forward
+        karel.move(2);
+        
+         //have susan go forward
+        susan.move(1);
+        
+          // turn susan around
+        susan.turnLeft();
+        
+        //have susan go forward
+        susan.move(1);
+        
+          // turn susan around
+        susan.turnRight();
+        
+         // turn karel around
+        karel.turnLeft();
+        
+         //have susan go forward
+        susan.move(1);
+        
+          // turn susan around
+        susan.turnRight();
+        
+          //have susan go forward
+        susan.move(1);
+        
+          //have susan go forward
+        karel.move(1);
     }
 }
