@@ -82,7 +82,7 @@ public class A1Q5 {
         //have karel go forward
         karel.move(1);
         
-         // have karel pick up the thing
+         // have karel pick up the groceries
         karel.pickThing();
         
         // have karel turn around
@@ -97,13 +97,13 @@ public class A1Q5 {
           // have maria move forward
         maria.move(1);
         
-         // have maria pick up the thing
+         // have maria pick up the groceries
         maria.pickThing();
         
         // have maria move forward
         maria.move(1);
         
-        // have maria pick up the thing
+        // have maria pick up the groceries
         maria.pickThing();
         
           // have maria turn left
@@ -112,7 +112,7 @@ public class A1Q5 {
          // have karel move forward
         karel.move(1);
         
-          // have karel pick up groceries 
+         // have karel pick up groceries 
         karel.pickThing();
         
         // have karel turn around
