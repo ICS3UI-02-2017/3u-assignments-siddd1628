@@ -37,14 +37,14 @@ public class RobotExample {
         karel.move();
         
         // move the robot n number of spaces
-        //karel.move(2);
+        // karel.move(2);
         // turn the robot to the left
         karel.turnLeft();
         
-        //put the letter K on karel
+        // put the letter K on karel
         karel.setLabel("K");
         
-        //set the color of the robot
+        // set the color of the robot
         karel.setColor(Color.PINK);
         
         // pick up the thing
@@ -53,10 +53,11 @@ public class RobotExample {
         // move once again
         karel.move();
         
-        //put the thing down
+        // put the thing down
         karel.putThing();
         karel.move();
-       // ??
+       
+       
         
         
      
