@@ -28,32 +28,58 @@ public class A1Q2 {
         // Create a new robot to put into the city
         RobotSE karel = new RobotSE(kw, 0, 0, Direction.EAST);
         
-         // Place things in front of karel
+    
          new Thing(kw, 0, 1);
-         
-         // Place things in front of karel
          new Thing(kw, 0, 2);
-         
-         // Place things in front of karel
          new Thing(kw, 0, 3);
-         
-         // Place things in front of karel
          new Thing(kw, 0, 4);
-         
-         // Place things in front of karel
          new Thing(kw, 0, 5);
-         
-         // Place things infront of karel
          new Thing(kw, 0, 6);
-         
-         // Place new thing in front of karel
          new Thing(kw, 0, 7);
-         
-         // Place new thing in front of karel
          new Thing(kw, 0, 8);
-         
-         // Place new thing in front of karel
          new Thing (kw, 0, 9);
+         new Thing (kw, 0, 10);
+         
+         // create an algorithm that will make karel walk forward and pick up the things
+       
+            if(karel.countThingsInBackpack()==0){
+            
+            karel.move();
+            karel.pickThing();
+            
+            if(karel.countThingsInBackpack()==1){
+                 
+            karel.move();
+            karel.pickThing();
+            if(karel.countThingsInBackpack()==2){
+            
+            karel.move();
+            karel.pickThing();
+            
+             if(karel.countThingsInBackpack()==3){
+            
+            karel.move();
+            karel.pickThing();
+            
+            if(karel.countThingsInBackpack()==4){
+            
+            karel.move();
+            karel.pickThing();
+            
+             if(karel.countThingsInBackpack()==5){
+            
+            karel.move();
+            karel.pickThing();
+            
+             if(karel.countThingsInBackpack()==6){
+            
+            karel.move();
+            karel.pickThing();
+            
+           karel.move(4);
+            
+             }
+         
          
          
         
