@@ -13,7 +13,7 @@ import becker.robots.Thing;
  *
  * @author siddd1628
  */
-public class A1Q2 {
+public class A2Q2 {
 
     /**
      * @param args the command line arguments
@@ -56,7 +56,7 @@ public class A1Q2 {
             karel.move();
             karel.pickThing();
             
-             if(karel.countThingsInBackpack()==3){
+            if(karel.countThingsInBackpack()==3){
             
             karel.move();
             karel.pickThing();
@@ -66,17 +66,17 @@ public class A1Q2 {
             karel.move();
             karel.pickThing();
             
-             if(karel.countThingsInBackpack()==5){
+            if(karel.countThingsInBackpack()==5){
             
             karel.move();
             karel.pickThing();
             
-             if(karel.countThingsInBackpack()==6){
+            if(karel.countThingsInBackpack()==6){
             
             karel.move();
             karel.pickThing();
             
-           karel.move(4);
+            karel.move(4);
             
              }
          

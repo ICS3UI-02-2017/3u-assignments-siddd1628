@@ -72,7 +72,10 @@ public class A1Q4 {
           //have susan go forward
         susan.move(1);
         
-          //have susan go forward
+          //have karel go forward
         karel.move(1);
+        
+         
+
     }
 }

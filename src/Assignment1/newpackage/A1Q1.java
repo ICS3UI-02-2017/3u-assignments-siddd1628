@@ -9,6 +9,7 @@ import becker.robots.Direction;
 import becker.robots.Robot;
 import becker.robots.RobotSE;
 import becker.robots.Wall;
+import java.awt.Color;
 
 /**
  * Demonstrate how to use robots 
@@ -26,6 +27,12 @@ public class A1Q1 {
         
         // Create a new robot to put into the city
         RobotSE karel = new RobotSE(daniTown, 2, 3, Direction.EAST);
+        
+        // put the letter K on karel
+        karel.setLabel("DS");
+        
+        // set the color of the robot
+        karel.setColor(Color.YELLOW);
         
         //Create a wall
         new Wall(daniTown, 3, 4, Direction.WEST);

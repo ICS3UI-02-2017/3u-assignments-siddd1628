@@ -38,8 +38,16 @@ public class A1Q1 {
         new Wall(kw, 2, 2, Direction.WEST);
         new Wall(kw, 1, 2, Direction.WEST);
         
-        // create an algorithm 
+        // create an algorithm to make karel go around the square twice
+            
+        int numberOfMoves = 2;
+        while (numberOfMoves > 0) {
+            karel.move();
+            
+            numberOfMoves = numberOfMoves - 1;
+            
+            
   
-      
-    }
+        }
+    
 }

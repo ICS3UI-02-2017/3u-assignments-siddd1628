@@ -76,7 +76,7 @@ public class A1Q2 {
         // move karel forward
         karel.move(1);
         
-         // have karel pick up the thing
+         // have karel pick up the newspaper
         karel.pickThing();
         
         // turn karel around
@@ -103,7 +103,7 @@ public class A1Q2 {
         // turn karel around
         karel.turnRight();
         
-        // make karel drop the thing he's carrying
+        // make karel drop the newspaper he's carrying
         karel.putThing();
 
 
