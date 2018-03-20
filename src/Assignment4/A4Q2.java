@@ -28,7 +28,7 @@ public class A4Q2 {
         System.out.println("Enter a measurment in inches");
         HeightInch = input.nextDouble();
         input.close();
-        // enter calculations
+        // calculate the numbers that have been input 
         HeightCm = HeightInch * 2.54;
         System.out.println("The measurment in cm is " + HeightCm);
         
