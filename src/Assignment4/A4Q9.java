@@ -4,6 +4,8 @@
  */
 package Assignment4;
 
+import java.util.Scanner;
+
 /**
  *
  * @author siddd1628
@@ -30,7 +32,7 @@ public class A4Q9 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         numberone = new javax.swing.JTextField();
-        numbertwo = new javax.swing.JTextField();
+        numberTwo = new javax.swing.JTextField();
         Result = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -45,9 +47,16 @@ public class A4Q9 extends javax.swing.JFrame {
 
         jLabel3.setText("Result");
 
-        numbertwo.addActionListener(new java.awt.event.ActionListener() {
+        numberTwo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                numbertwoActionPerformed(evt);
+                numberTwoActionPerformed(evt);
+            }
+        });
+
+        Result.setEditable(false);
+        Result.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResultActionPerformed(evt);
             }
         });
 
@@ -59,6 +68,11 @@ public class A4Q9 extends javax.swing.JFrame {
         });
 
         jButton2.setText("Sub");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Mul");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +82,11 @@ public class A4Q9 extends javax.swing.JFrame {
         });
 
         jButton4.setText("Div");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,7 +116,7 @@ public class A4Q9 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(numbertwo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(numberTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -113,7 +132,7 @@ public class A4Q9 extends javax.swing.JFrame {
                     .addComponent(numberone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numbertwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numberTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -133,21 +152,34 @@ public class A4Q9 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Scanner input = new Scanner(System.in);
+        String one = numberone.getText();
+        String two = numberTwo.getText();
+        int n1 = Integer.parseInt(one);
+        int n2 = Integer.parseInt(two);
+        int n3 = n1 + n2 ;
+        Result.setText(" " + n3);
+               
+        
         
     
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void numbertwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numbertwoActionPerformed
+    private void numberTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberTwoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_numbertwoActionPerformed
+    }//GEN-LAST:event_numberTwoActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        Scanner input = new Scanner(System.in);
+        String one = numberone.getText();
+        String two = numberTwo.getText();
+        int n1 = Integer.parseInt(one);
+        int n2 = Integer.parseInt(two);
+        int n3 = n1 * n2 ;
+        Result.setText(" " + n3);
  
-        String num1 = numberone.getText();
-        String num2 = numbertwo.getText();
-        
-        int 
+         
         
                 
 
@@ -165,6 +197,32 @@ public class A4Q9 extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void ResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ResultActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Scanner input = new Scanner(System.in);
+        String one = numberone.getText();
+        String two = numberTwo.getText();
+        int n1 = Integer.parseInt(one);
+        int n2 = Integer.parseInt(two);
+        int n3 = n1 - n2 ;
+        Result.setText(" " + n3);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        Scanner input = new Scanner(System.in);
+        String one = numberone.getText();
+        String two = numberTwo.getText();
+        int n1 = Integer.parseInt(one);
+        int n2 = Integer.parseInt(two);
+        int n3 = n1 / n2 ;
+        Result.setText(" " + n3);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,7 +267,7 @@ public class A4Q9 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField numberTwo;
     private javax.swing.JTextField numberone;
-    private javax.swing.JTextField numbertwo;
     // End of variables declaration//GEN-END:variables
 }
