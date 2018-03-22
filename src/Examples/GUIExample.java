@@ -58,6 +58,12 @@ public class GUIExample extends javax.swing.JFrame {
 
         jLabel2.setText("Year born:");
 
+        Yearborntext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YearborntextActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,6 +125,10 @@ public class GUIExample extends javax.swing.JFrame {
         // say hello to the user 
         OutputText.setText(" Hello " + name + " you are approximately " + age + " years old! ");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void YearborntextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YearborntextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YearborntextActionPerformed
 
     /**
      * @param args the command line arguments

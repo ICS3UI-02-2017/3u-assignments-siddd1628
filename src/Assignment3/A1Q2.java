@@ -27,7 +27,7 @@ public class A1Q2 {
         // Create a new robot to put into the city
         RobotSE karel = new RobotSE(kw, 0, 3, Direction.WEST);
         
-        
+        // Place the thi
         new Thing(kw, 1 , 1);
         new Thing(kw, 1 , 1);
         new Thing(kw, 1 , 1);

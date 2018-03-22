@@ -20,7 +20,7 @@ public class A4Q4 {
         //create a scanner to read information
         Scanner input = new Scanner(System.in);
        
-        //Ask what the cost is
+        //Ask for all the amounts of money spent on thing
         System.out.print("How much does the food for prom cost?");
        int promfood = input.nextInt();
        
@@ -38,11 +38,11 @@ public class A4Q4 {
        
        System.out.print("How much do the misc items for prom cost?");
        int misc = input.nextInt();
-       
+       // add all the costs together
        int cost;
        cost = promfood + dj + hall + decor + staff + misc;
         System.out.println("The sum is: " + cost);
-        
+        // dividethe cost by 35 to see how many tickets would be needed to break even
         int ticket;
         ticket = cost / 35;
          System.out.println("You will need " + ticket + " tickets to break even");

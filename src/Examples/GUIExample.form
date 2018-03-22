@@ -117,6 +117,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="Yearborntext">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="YearborntextActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
