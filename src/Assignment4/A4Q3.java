@@ -20,15 +20,16 @@ public class A4Q3 {
         
         // use a SCANNER to read info
             Scanner sc = new Scanner(System.in);
-        System.out.print("Please enter four numbers: ");
+        // ask for the numbers to be entered
+            System.out.print("Please enter four numbers: ");
 
-
-int a = sc.nextInt(); 
-int b = sc.nextInt();
-int c = sc.nextInt();
-int d = sc.nextInt();
-
-System.out.println("Your numbers were: " + a + "," + b + "," + c + "," + d); 
+        // hae all the numbers entered and placed on seperate lines
+            int a = sc.nextInt(); 
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            int d = sc.nextInt();
+        // output all the numbers on the same line
+            System.out.println("Your numbers were: " + a + "," + b + "," + c + "," + d); 
 }
     }
 
