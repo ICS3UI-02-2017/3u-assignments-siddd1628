@@ -32,9 +32,14 @@ public class A4Q6 {
            
             
                
-               if( carr > limit + 20 ) {
+               if( carr > limit > 1 < 20 ) {
                System.out.println("You are speeding. Your fine is $100");
                }else if(carr < limit +20)
+               System.out.println("You are not speeding"); {
+        
+                if( carr > limit + 30 ) {
+               System.out.println("You are speeding. Your fine is $565656560");
+               }else if(carr < limit +30)
                System.out.println("You are not speeding"); {
         
          
@@ -43,5 +48,6 @@ public class A4Q6 {
     }
     }
     }
+}
     
 

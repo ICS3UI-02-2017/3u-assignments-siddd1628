@@ -42,7 +42,7 @@ public class A4Q4 {
        int cost;
        cost = promfood + dj + hall + decor + staff + misc;
         System.out.println("The sum is: " + cost);
-        // dividethe cost by 35 to see how many tickets would be needed to break even
+        // divide the cost by 35 to see how many tickets would be needed to break even
         int ticket;
         ticket = cost / 35;
          System.out.println("You will need " + ticket + " tickets to break even");
