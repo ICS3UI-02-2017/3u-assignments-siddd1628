@@ -23,34 +23,47 @@ public class A4Q5 {
             System.out.print("Please enter your name ");
             String name = input.nextLine() ;
             System.out.print("What was the first test out of?");
-       int firsttest = input.nextInt();
+       double firsttest = input.nextDouble();
        System.out.print("What mark did you get?");
-       int firsttestmark = input.nextInt();
+       double firsttestmark = input.nextDouble();
             
        System.out.print("What was the second test out of?");
-       int secondtest = input.nextInt();
+       double secondtest = input.nextDouble();
        System.out.print("What mark did you get?");
-       int secondtestmark = input.nextInt();
+       double secondtestmark = input.nextDouble();
        
        System.out.print("What was the third test out of?");
-       int thirdtest = input.nextInt();
+       double thirdtest = input.nextDouble();
        System.out.print("What mark did you get?");
-       int thirdtestmark = input.nextInt();
+       double thirdtestmark = input.nextDouble();
        
        System.out.print("What was the fourth test out of?");
-       int fourthtest = input.nextInt();
+       double fourthtest = input.nextDouble();
        System.out.print("What mark did you get?");
-       int fourthtestmark = input.nextInt();
+       double fourthtestmark = input.nextDouble();
        
        System.out.print("What was the fifth test out of?");
-       int fifthtest = input.nextInt();
+       double fifthtest = input.nextDouble();
        System.out.print("What mark did you get?");
-       int fifthtestmark = input.nextInt();
-       
-        System.out.println("Test scores for " + name);
+       double fifthtestmark = input.nextDouble();
+           
+        // calculate the numbers that have been input 
+      double firsttestresult = firsttest / firsttestmark; 
+        System.out.println("Test results for " + name);
+        System.out.println("Test 1 " + firsttestresult);
+        double secondtestresult = secondtest / secondtestmark;
+        System.out.println("Test 2 " + secondtestresult);
+        double thirdtestresult = thirdtest / thirdtestmark;
+        System.out.println("Test 3 " + thirdtestresult);
+        double fourthtestresult = fourthtest / fourthtestmark ; 
+        System.out.println("Test 4 " + fourthtestresult);
+        double fifthtestresult = fifthtest / fifthtestmark;
+        System.out.println("Test 5 " + fifthtestresult);
+        double sum = firsttestresult + secondtestresult + thirdtestresult + fourthtestresult + fifthtestresult;
+        double average = sum / 5;
+        System.out.println("The average is: " + average);
         
-        int firstresult = firsttestmark / firsttest ;
         
-        System.out.println("Test 1:" +  );
+        
     }
 }
