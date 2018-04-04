@@ -40,14 +40,21 @@ public class A1Q1 {
         
         // create an algorithm to make karel go around the square twice
             
-        int numberOfMoves = 2;
+        int numberOfMoves = 4;
         while (numberOfMoves > 0) {
             karel.move();
             
-            numberOfMoves = numberOfMoves - 1;
+          
             
             
-  
-        }
+        
+        
     
+// when the front is not clear
+        karel.turnLeft(); 
+
+        }
+    }
 }
+
+

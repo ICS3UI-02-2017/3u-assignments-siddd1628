@@ -117,6 +117,14 @@ public class A4Q10 extends javax.swing.JFrame {
 
     private void ConvertorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConvertorActionPerformed
         // TODO add your handling code here:
+        //Create an integer 
+         int toTemp = 0;
+
+        if (convertingFrom == TEMP_TYPE.Fahrenheit) {
+            toTemp = (int)(Math.round((fromTemp - 32) * (5.0 / 9.0)));
+        }
+        else if (convertingFrom == TEMP_TYPE.Celsius) {
+            toTemp = (int)(Math.round(fromTemp * 1.8 + 32));
         
         
     }//GEN-LAST:event_ConvertorActionPerformed

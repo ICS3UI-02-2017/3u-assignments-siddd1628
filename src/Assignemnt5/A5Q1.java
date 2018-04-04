@@ -22,5 +22,6 @@ public class A5Q1 {
         String origWord = input.nextLine(); 
             //santiize the input
             origWord = origWord.toLowerCase();
+            if(origWord.startsWith("a") || origWord.startsWith("i") || origWord.startsWith("o") || origWord.startsWith("u") || origWord.startsWith("e")) {
     }
 }
