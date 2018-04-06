@@ -82,6 +82,7 @@ public class A4Q8 extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Program the button to say hello to the person
         String name = Name.getText();
+        // tell the user hello and add their name
         Hello.setText(" Hello, " + name);
     }//GEN-LAST:event_jButton1ActionPerformed
 
