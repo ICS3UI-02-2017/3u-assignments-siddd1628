@@ -149,11 +149,15 @@ public class A4Q9 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Scanner input = new Scanner(System.in);
+        //Type in the two numbers that will be added
         String one = numberone.getText();
         String two = numberTwo.getText();
+        // create 3 new integers to do the math with
         int n1 = Integer.parseInt(one);
         int n2 = Integer.parseInt(two);
+        // the third integer is the sum of the first two
         int n3 = n1 + n2 ;
+        //Show what the third integer is
         Result.setText(" " + n3);
                
         
@@ -168,11 +172,15 @@ public class A4Q9 extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         Scanner input = new Scanner(System.in);
+        // type in two numbers that will be multiplied 
         String one = numberone.getText();
         String two = numberTwo.getText();
+        //create 3 integers to do the math with
         int n1 = Integer.parseInt(one);
         int n2 = Integer.parseInt(two);
+        // the third integer is the product of the first two
         int n3 = n1 * n2 ;
+        // show what the third integer is
         Result.setText(" " + n3);
  
          
@@ -201,22 +209,30 @@ public class A4Q9 extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Scanner input = new Scanner(System.in);
+        // type in the two numbers that will be subtracted
         String one = numberone.getText();
         String two = numberTwo.getText();
+        // create 3 integers to do the math with
         int n1 = Integer.parseInt(one);
         int n2 = Integer.parseInt(two);
+        // the third integer is the difference of the first two
         int n3 = n1 - n2 ;
+        // show what the third integer is
         Result.setText(" " + n3);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         Scanner input = new Scanner(System.in);
+        // type in the two numberes that will be divided
         String one = numberone.getText();
         String two = numberTwo.getText();
+        // create 3 integers to do the math with
         int n1 = Integer.parseInt(one);
         int n2 = Integer.parseInt(two);
+        // the third integer is the quotient of the first two
         int n3 = n1 / n2 ;
+        // show what the third integer is
         Result.setText(" " + n3);
     }//GEN-LAST:event_jButton4ActionPerformed
 
