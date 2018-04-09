@@ -31,8 +31,8 @@ public class A4Q10 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         Convertor = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        F = new javax.swing.JTextField();
-        C = new javax.swing.JTextField();
+        Faren = new javax.swing.JTextField();
+        Celc = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,15 +56,15 @@ public class A4Q10 extends javax.swing.JFrame {
             }
         });
 
-        F.addActionListener(new java.awt.event.ActionListener() {
+        Faren.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FActionPerformed(evt);
+                FarenActionPerformed(evt);
             }
         });
 
-        C.addActionListener(new java.awt.event.ActionListener() {
+        Celc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CActionPerformed(evt);
+                CelcActionPerformed(evt);
             }
         });
 
@@ -85,11 +85,11 @@ public class A4Q10 extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(C)
+                                .addComponent(Celc)
                                 .addGap(77, 77, 77)
                                 .addComponent(jButton2))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(F, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Faren, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(77, 77, 77)
                                 .addComponent(Convertor)))))
                 .addGap(64, 64, 64))
@@ -103,12 +103,12 @@ public class A4Q10 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(Convertor)
-                    .addComponent(F, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Faren, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jButton2)
-                    .addComponent(C, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Celc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(188, Short.MAX_VALUE))
         );
 
@@ -117,25 +117,40 @@ public class A4Q10 extends javax.swing.JFrame {
 
     private void ConvertorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConvertorActionPerformed
         // TODO add your handling code here:
-        //Create an integer 
+        //Create integers and doubles to store the information
+          double F,C, Ctemp;
+        F = Double.parseDouble(Faren.getText());
+        // do the math to get the answer
+        C = F - 32;
+        Ctemp = C *5/9;
+        // tell the user what the answer is
+        Faren.setText("" + Ctemp);
+
         
       
         
         
     }//GEN-LAST:event_ConvertorActionPerformed
 
-    private void FActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FActionPerformed
+    private void FarenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FarenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FActionPerformed
+    }//GEN-LAST:event_FarenActionPerformed
 
-    private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
+    private void CelcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CelcActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CActionPerformed
+    }//GEN-LAST:event_CelcActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        int tempFahr = (int) ((Double.parseDouble(F.getText())) * 1.8 + 32);
-        C.setText(tempFahr + " Fahrenheit");
+         //Create integers and doubles to store the information
+        double F,C,Ftemp ;
+        C = Double.parseDouble(Celc.getText());
+         // do the math to get the answer
+        F = C*9;
+        Ftemp = F/5 + 32;
+        // tell the user what the answer is
+        Celc.setText("" + Ftemp);
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -173,9 +188,9 @@ public class A4Q10 extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField C;
+    private javax.swing.JTextField Celc;
     private javax.swing.JButton Convertor;
-    private javax.swing.JTextField F;
+    private javax.swing.JTextField Faren;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
