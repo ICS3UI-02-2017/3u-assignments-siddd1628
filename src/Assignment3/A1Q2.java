@@ -25,9 +25,9 @@ public class A1Q2 {
          City kw = new City();
 
         // Create a new robot to put into the city
-        RobotSE karel = new RobotSE(kw, 0, 3, Direction.WEST);
+        RobotSE karel = new RobotSE(kw, 1, 1, Direction.EAST);
         
-        // Place the thi
+        // Place the things for karel to pick up
         new Thing(kw, 1 , 1);
         new Thing(kw, 1 , 1);
         new Thing(kw, 1 , 1);
@@ -38,6 +38,15 @@ public class A1Q2 {
         new Thing(kw, 1 , 1);
         new Thing(kw, 1 , 1);
         new Thing(kw, 1 , 1);
+        
+         // is there something to pick up
+            if (karel.canPickThing()) {
+                karel.pickThing();
+                 // if the front is clear do this thing
+            karel.move();
+            
+            if (karel.canputThing()) {
+                karel.putThing();
         
         
         
