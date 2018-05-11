@@ -38,7 +38,7 @@ public class Face extends JComponent implements ActionListener {
     Timer gameTimer;
 
     // YOUR GAME VARIABLES WOULD GO HERE
-    
+    Color purple = new Color(102, 52, 80);
 
 
     // GAME VARIABLES END HERE    
@@ -98,15 +98,18 @@ public class Face extends JComponent implements ActionListener {
         g.fillOval(485, 330, 150,50);
          //MOUTH
         g.setColor(Color.BLACK);
-        g.fillArc(320, 550, 250, 100, 180, 180);
+        g.fillArc(320, 570, 250, 100, 180, 180);
         //LINE UNDER THE MOUTH
-        g.fillArc(380, 640, 120, 30, 180, 180);
+        g.fillArc(385, 669, 120, 30, 180, 180);
         
         // draw a polygon
-        int[] triangleX = {300,400,300};
-        int[] triangleY = {300,300,700};
+        g.setColor(purple);
+        int[] triangleX = {280,360,300};
+        int[] triangleY = {425,425,615};
         // (array of x points, array of y points, # of points)
         g.fillPolygon(triangleX, triangleY, 3);
+        
+        
 		
         // GAME DRAWING ENDS HERE
     }
