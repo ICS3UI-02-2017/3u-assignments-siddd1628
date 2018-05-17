@@ -39,6 +39,7 @@ public class TrafficRush extends JComponent implements ActionListener {
 
     // YOUR GAME VARIABLES WOULD GO HERE
     Color green = new Color (39, 132, 47);
+    Color flesh = new Color (229, 165, 135);
     
 
 
@@ -121,6 +122,11 @@ public class TrafficRush extends JComponent implements ActionListener {
       g.setColor(Color.YELLOW);
       g.fillRect (900,300,60,30);
 		
+      
+      // draw the person walking across the street
+      g.setColor(flesh);
+      g.fillOval(300,343,50,50);
+      
         // GAME DRAWING ENDS HERE
     }
 
