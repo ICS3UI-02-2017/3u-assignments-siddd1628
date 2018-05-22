@@ -15,29 +15,35 @@ public class A7Q1 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    
+       
+       public static double circleArea() {
         // TODO code application logic here
-            // calculate the positive root of quadratic formula 
-    public static double  circleArea () {
         
-        Scanner in = new Scanner (System.in);
-    }
-        // create the array to store bot roots
-        double[] roots = new double [1];
-        //calcualte the roots
-        System.out.println("What is the radius ?");
+        //create a scanner to scan the information that is input
+        Scanner input = new Scanner(System.in);
         
+        // create a double that will store the radius 
         double radius = input.nextDouble();
+        // create another double that will store the calculated number
+        double answer = 3.14 * (Math.pow(radius,2)); 
+        // return the answer double
+        return answer; 
+    }
         
-            double discrim = Math.PI * radius ; 
-                    double radiuus= dsicrim 
-                    math. pow(user,2)
-            roots[0] = (-b + Math.sqrt(discrim))/(2*a);
-            
-            //send back the root 
-            return root;
+   
+        public static void main(String[] args) {
+            // ask for the radius
+            System.out.println("What is the radius?");
+            circleArea();
+            System.out.println("The are of the circle is" + circleArea());
+        }
+    }
+
+
+                    
             
         
          
-    }
-}
+    
+
