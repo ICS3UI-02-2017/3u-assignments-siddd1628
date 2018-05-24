@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -40,12 +41,18 @@ public class TrafficRush extends JComponent implements ActionListener {
     // YOUR GAME VARIABLES WOULD GO HERE
     Color green = new Color (39, 132, 47);
     Color flesh = new Color (229, 165, 135);
-    
+    Color darkblue = new Color (13, 52, 114);
 
 
     // GAME VARIABLES END HERE    
-
+    Rectangle car1 = new Rectangle(50,250,50,200);
     
+    
+    // ball o flesh
+    // ball variables
+    Rectangle ball = new Rectangle(100,295,50,50);
+    int ballAngle = 90;
+    int ballSpeed = 5;
     // Constructor to create the Frame and place the panel in
     // You will learn more about this in Grade 12 :)
     public TrafficRush(){
@@ -121,11 +128,12 @@ public class TrafficRush extends JComponent implements ActionListener {
       
       g.setColor(Color.YELLOW);
       g.fillRect (900,300,60,30);
-		
       
-      // draw the person walking across the street
-      g.setColor(flesh);
-      g.fillOval(300,343,50,50);
+      // draw the ball
+      g.setColor(darkblue);
+        g.fillRect(ball.x, ball.y, ball.width, ball.height);
+      
+      
       
         // GAME DRAWING ENDS HERE
     }
