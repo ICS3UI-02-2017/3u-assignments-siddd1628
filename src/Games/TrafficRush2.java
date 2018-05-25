@@ -1,5 +1,6 @@
 package Games;
 
+import static Games.TrafficRush.WIDTH;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JComponent;
@@ -19,11 +20,11 @@ import javax.swing.Timer;
  *
  * @author siddd1628
  */
-public class TrafficRush extends JComponent implements ActionListener {
+public class TrafficRush2 extends JComponent implements ActionListener {
 
     // Height and Width of our game
-    static final int WIDTH = 800;
-    static final int HEIGHT = 600;
+    static final int WIDTH = 900;
+    static final int HEIGHT = 900;
 
     //Title of the window
     String title = "My Game";
@@ -39,23 +40,27 @@ public class TrafficRush extends JComponent implements ActionListener {
     Timer gameTimer;
 
     // YOUR GAME VARIABLES WOULD GO HERE
-    Color green = new Color (39, 132, 47);
-    Color flesh = new Color (229, 165, 135);
-    Color darkblue = new Color (13, 52, 114);
-
-
-    // GAME VARIABLES END HERE    
-    Rectangle car1 = new Rectangle(50,250,50,200);
-    
-    
-    // ball o flesh
     // ball variables
-    Rectangle ball = new Rectangle(100,295,50,50);
-    int ballAngle = 90;
+    Rectangle ball = new Rectangle(395,295,10,10);
+    int ballAngle = 45;
     int ballSpeed = 5;
+    //car variables
+    Rectangle car1 = new Rectangle(50,250,25,100);
+    Rectangle car2 = new Rectangle(725,250,25,100);
+    Rectangle car3 = new Rectangle(725,250,25,100);
+    Rectangle car4 = new Rectangle(725,250,25,100);
+    Rectangle car5 = new Rectangle(725,250,25,100);
+    Rectangle car6 = new Rectangle(725,250,25,100);
+    Rectangle car7 = new Rectangle(725,250,25,100);
+    
+    //create colours
+     Color green = new Color(10, 168, 12);
+    // GAME VARIABLES END HERE    
+
+    
     // Constructor to create the Frame and place the panel in
     // You will learn more about this in Grade 12 :)
-    public TrafficRush(){
+    public TrafficRush2(){
         // creates a windows to show my game
         JFrame frame = new JFrame(title);
 
@@ -88,55 +93,20 @@ public class TrafficRush extends JComponent implements ActionListener {
     // NOTE: This is already double buffered!(helps with framerate/speed)
     @Override
     public void paintComponent(Graphics g) {
-      // always clear the screen first!
-      g.clearRect(0, 0, WIDTH, HEIGHT);
+        // always clear the screen first!
+        g.clearRect(0, 0, WIDTH, HEIGHT);
 
-      // GAME DRAWING GOES HERE
-      //Create the background
-      //create the grass
-      g.setColor(green);
+        // GAME DRAWING GOES HERE
+        //create the grass
+        g.setColor(green);
       g.fillRect (0,0,WIDTH, HEIGHT);
-      
-      g.setColor(Color.BLACK);
-      // create the road
-      g.fillRect(0,200,800,230);
-      // add the yellow lines on the road
-      g.setColor(Color.YELLOW);
-      g.fillRect (0,300,60,30);
-      
-      g.setColor(Color.YELLOW);
-      g.fillRect (100,300,60,30);
-      
-      g.setColor(Color.YELLOW);
-      g.fillRect (200,300,60,30);
-      
-      g.setColor(Color.YELLOW);
-      g.fillRect (300,300,60,30);
-      
-      g.setColor(Color.YELLOW);
-      g.fillRect (400,300,60,30);
-      
-      g.setColor(Color.YELLOW);
-      g.fillRect (500,300,60,30);
-      
-      g.setColor(Color.YELLOW);
-      g.fillRect (600,300,60,30);
-      
-      g.setColor(Color.YELLOW);
-      g.fillRect (700,300,60,30);
-      
-      g.setColor(Color.YELLOW);
-      g.fillRect (800,300,60,30);
-      
-      g.setColor(Color.YELLOW);
-      g.fillRect (900,300,60,30);
-      
-      // draw the ball
-      g.setColor(darkblue);
-      g.fillRect(ball.x, ball.y, ball.width, ball.height);
-      
-      
-      
+        //create the road for the cars
+        g.setColor(Color.BLACK);
+        // create the roads
+        g.fillRect(0,530,900,230);
+	g.fillRect(0,250,900,230);
+        g.fillRect(0,50,900,150);
+		
         // GAME DRAWING ENDS HERE
     }
 
@@ -150,7 +120,7 @@ public class TrafficRush extends JComponent implements ActionListener {
     // The main game loop
     // In here is where all the logic for my game will go
     public void gameLoop() {
-        moveBall();
+        
     }
 
     // Used to implement any of the Mouse Actions
@@ -203,7 +173,13 @@ public class TrafficRush extends JComponent implements ActionListener {
         gameLoop();
         repaint();
     }
-}
-{
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // creates an instance of my game
+        TrafficRush2 game = new TrafficRush2();
+    }
 }
 

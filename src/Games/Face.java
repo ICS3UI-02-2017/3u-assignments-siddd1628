@@ -109,6 +109,13 @@ public class Face extends JComponent implements ActionListener {
         // (array of x points, array of y points, # of points)
         g.fillPolygon(triangleX, triangleY, 3);
         
+        // draw a polygon
+        g.setColor(purple);
+        int[] triangleXx = {380,360,300};
+        int[] triangleYy = {525,425,615};
+        // (array of x points, array of y points, # of points)
+        g.fillPolygon(triangleX, triangleY, 3);
+        
         
 		
         // GAME DRAWING ENDS HERE

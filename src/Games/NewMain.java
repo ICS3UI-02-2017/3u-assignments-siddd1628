@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Examples;
+package Games;
 
 /**
  *
  * @author siddd1628
  */
-public class NewMain1 {
+public class NewMain {
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,8 @@
  */
 package Examples;
 
+import java.util.Scanner;
+
 /**
  *
  * @author siddd1628
@@ -17,7 +19,7 @@ public class NewMain {
         // TODO code application logic here
         
          // scanner for input
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);  
         
         // make an array to store expenses
         double[] expenses = new double[6];

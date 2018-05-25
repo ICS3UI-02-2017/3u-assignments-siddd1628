@@ -1,3 +1,64 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -46,6 +107,12 @@ public class A4Q9 extends javax.swing.JFrame {
         jLabel2.setText("Second Number");
 
         jLabel3.setText("Result");
+
+        numberone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numberoneActionPerformed(evt);
+            }
+        });
 
         numberTwo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,6 +281,7 @@ public class A4Q9 extends javax.swing.JFrame {
         String two = numberTwo.getText();
         // create 3 integers to do the math with
         int n1 = Integer.parseInt(one);
+        
         int n2 = Integer.parseInt(two);
         // the third integer is the difference of the first two
         int n3 = n1 - n2 ;
@@ -222,7 +290,7 @@ public class A4Q9 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
         Scanner input = new Scanner(System.in);
         // type in the two numberes that will be divided
         String one = numberone.getText();
@@ -235,6 +303,10 @@ public class A4Q9 extends javax.swing.JFrame {
         // show what the third integer is
         Result.setText(" " + n3);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void numberoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numberoneActionPerformed
 
     /**
      * @param args the command line arguments

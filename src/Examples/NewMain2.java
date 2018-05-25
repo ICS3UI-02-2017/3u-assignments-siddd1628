@@ -18,16 +18,16 @@ import javax.swing.Timer;
 
 /**
  *
- * @author siddd1628
+ * @author lamon
  */
-public class pongexample extends JComponent implements ActionListener {
+public class PongExample extends JComponent implements ActionListener {
 
     // Height and Width of our game
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
 
     //Title of the window
-    String title = "Pong";
+    String title = "My Game";
 
     // sets the framerate and delay for our game
     // this calculates the number of milliseconds per frame
@@ -40,31 +40,37 @@ public class pongexample extends JComponent implements ActionListener {
     Timer gameTimer;
 
     // YOUR GAME VARIABLES WOULD GO HERE
-    //draw the first paddle (x,y,width,height)
-    Rectangle paddle1 = new Rectangle(50,250,25,100); 
-    Rectangle paddle2 = new Rectangle (725,250,25,100);
-    //draw ball
-    Rectangle ball = new Rectangle (395,295,10,10);
-    int ballAngle = 45;
-    int ballSpeed = 6;
     
-    //control variables
+    // Rectangle(x,y,width,height)
+    Rectangle paddle1 = new Rectangle(50,250,25,100);
+    Rectangle paddle2 = new Rectangle(725,250,25,100);
+
+    // ball variables
+    Rectangle ball = new Rectangle(395,295,10,10);
+    int ballAngle = 45;
+    int ballSpeed = 5;
+    
+    // control variables
     boolean paddle1Up = false;
     boolean paddle1Down = false;
     boolean paddle2Up = false;
     boolean paddle2Down = false;
     int paddleSpeed = 5;
+    
     // player scores
     int score1 = 0;
     int score2 = 0;
-    //CREATE A CUSTOM FONT
-    Font biggerFont = new Font("arial", Font.BOLD,36);
+    
+    // create a custom font
+    Font biggerFont = new Font("arial", Font.BOLD, 36);
+    
+    
     // GAME VARIABLES END HERE    
 
     
     // Constructor to create the Frame and place the panel in
     // You will learn more about this in Grade 12 :)
-    public pongexample(){
+    public PongExample(){
         // creates a windows to show my game
         JFrame frame = new JFrame(title);
 
@@ -101,23 +107,24 @@ public class pongexample extends JComponent implements ActionListener {
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
         // GAME DRAWING GOES HERE
+        
         // draw the background
         g.setColor(Color.BLACK);
         g.fillRect(0,0,WIDTH,HEIGHT);
-        
-        //draw the scores
-        g.setFont(biggerFont);
-        g.drawString(""+score1,WIDTH/2 -50, 50);
-        g.drawString(""+score2, WIDTH/2 + 50,50);
-        //draw the paddles
+		
+        // draw the players/paddles
         g.setColor(Color.WHITE);
-        g.fillRect(paddle1.x,paddle1.y,paddle1.width,paddle1.height);
-        g.fillRect(paddle2.x,paddle2.y,paddle2.width,paddle2.height);
-        //draw the ball
+        g.fillRect(paddle1.x, paddle1.y, paddle1.width, paddle1.height);
+        g.fillRect(paddle2.x, paddle2.y, paddle2.width, paddle2.height);
+        
+        // draw the scores
+        g.setFont(biggerFont);
+        g.drawString("" + score1, WIDTH/2 - 150, 50);
+        g.drawString("" + score2, WIDTH/2 + 150, 50);
+        
+        // draw the ball
         g.fillRect(ball.x, ball.y, ball.width, ball.height);
         
-		
-		
         // GAME DRAWING ENDS HERE
     }
 
@@ -133,67 +140,84 @@ public class pongexample extends JComponent implements ActionListener {
     public void gameLoop() {
         moveBall();
         movePaddles();
-        checkforCollision(); 
-        checkforGoal();
-        
+        checkForCollision();
+        checkForGoal();
     }
 
     private void moveBall() {
-        //convert ball angle to radians to use in trig
-      double newAngle = Math.toRadians(ballAngle);
-      //determine how much to move ball x and ball y using trigonometry
-      double moveX = ballSpeed*Math.cos(newAngle);
-      double moveY = ballSpeed*Math.sin(newAngle);
-      //moving the ball
-      ball.x = ball.x + (int)moveX;
-      ball.y = ball.y + (int)moveY; 
-      //control variabeles
+        // convert ball angle to radians to use in trig
+        double newAngle = Math.toRadians(ballAngle);
+        // determine how much to move ball x and ball y
+        // using trig
+        double moveX = ballSpeed*Math.cos(newAngle);
+        double moveY = ballSpeed*Math.sin(newAngle);
+        // move the ball
+        ball.x = ball.x + (int)moveX;
+        ball.y = ball.y + (int)moveY;
     }
 
     private void movePaddles() {
+        // player 1 control
         if(paddle1Up){
             paddle1.y = paddle1.y - paddleSpeed;
-        }else if (paddle1Down) {
+        }else if(paddle1Down){
             paddle1.y = paddle1.y + paddleSpeed;
         }
-        //player 2 control
-         if(paddle2Up){
-            paddle2.y = paddle2.y - paddleSpeed;
-        }else if (paddle1Down) {
-            paddle2.y = paddle2.y + paddleSpeed;
-    }
-    }
-
-    private void checkforCollision() {
-     //collision with bottom/top
-        if(ball.y<0){
-        ballAngle = ballAngle * -1;
-        }
-        if(ball.y + ball.height > HEIGHT) {
-            ballAngle = ballAngle * -1;
-        }
-        if(ball.intersects(paddle1)){
-            ballAngle = 180 + ballAngle * -1; {
-    }
-        }
-        }
-    private void checkforGoal() {
-        //ball off left hand side 
-        if(ball.x < 0){
-            //add player 2 score
-            score2++;
-            ball.x = WIDTH/2-ball.width/2;
-            ball.y = HEIGHT/2 - ball.height/2;
-        }
-        //BALL HIST RIGHT HAND SIDE
-        if (ball.x + ball.width > WIDTH) {
-            //ADD TO PLAYER 1 SCORE
-            score1++;
-            ball.x = WIDTH/2-ball.width/2;
-            ball.y = HEIGHT/2 - ball.height/2;
+        
+        // is paddle too far up?
+        if(paddle1.y < 0){
+            paddle1.y = 0;
+        // has the bottom gone too far?
+        }else if(paddle1.y + paddle1.height > HEIGHT){
+            paddle1.y = HEIGHT - paddle1.height;
         }
         
-       
+        // player 2 control
+        if(paddle2Up){
+            paddle2.y = paddle2.y - paddleSpeed;
+        }else if(paddle2Down){
+            paddle2.y = paddle2.y + paddleSpeed;
+        }
+    }
+
+    private void checkForCollision() {
+        // collision with bottom/top
+        if(ball.y < 0){
+            ballAngle = ballAngle * -1;
+        }
+        if(ball.y + ball.height > HEIGHT){
+            ballAngle = ballAngle * -1;
+        }
+        
+        // NOTE: % 360 just makes sure we don't go over 360 degrees
+        // does the ball hit paddle1
+        if(ball.intersects(paddle1)){
+            ballAngle = (180 + ballAngle * -1) % 360;
+        }
+        // does the ball hit paddle2
+        if(ball.intersects(paddle2)){
+            ballAngle = (180 + ballAngle * -1) % 360;
+        }
+        
+    }
+
+    private void checkForGoal() {
+        // ball off left hand side
+        if(ball.x < 0){
+            // add to player 2 score
+            score2++;
+            // put ball back at the center
+            ball.x = WIDTH/2 - ball.width/2;
+            ball.y = HEIGHT/2 - ball.height/2;
+        }
+        // ball hits right hand side of the screen
+        if(ball.x + ball.width > WIDTH){
+            // add to player 1 score
+            score1++;
+            // put ball back at the center
+            ball.x = WIDTH/2 - ball.width/2;
+            ball.y = HEIGHT/2 - ball.height/2;
+        }
     }
 
     // Used to implement any of the Mouse Actions
@@ -227,29 +251,41 @@ public class pongexample extends JComponent implements ActionListener {
     // Used to implements any of the Keyboard Actions
     private class Keyboard extends KeyAdapter {
 
-        
+        // if a key has been pressed down
         @Override
         public void keyPressed(KeyEvent e) {
-        int keyCode = e.getKeyCode();
-        if(keyCode == KeyEvent.VK_W);{
-            paddle1Up = true;
-        }else if(keyCode == KeyEvent.VK_S){
-                paddle1Down = false;
-        
-        }
-         // paddle 2 controls
-         if(keyCode == KeyEvent.VK_UP){
-               paddle2Up = false;
+            int keyCode = e.getKeyCode();
+            // paddle 1 controls
+            if(keyCode == KeyEvent.VK_W){
+                paddle1Up = true;
+            }else if(keyCode == KeyEvent.VK_S){
+                paddle1Down = true;
+            }
+            // paddle 2 controls
+            if(keyCode == KeyEvent.VK_UP){
+                paddle2Up = true;
             }else if(keyCode == KeyEvent.VK_DOWN){
-                paddle2Down = false;
-    }
-    }
+                paddle2Down = true;
+            }
+            
         }
 
         // if a key has been released
         @Override
         public void keyReleased(KeyEvent e) {
-
+            int keyCode = e.getKeyCode();
+            // paddle 1 controls
+            if(keyCode == KeyEvent.VK_W){
+                paddle1Up = false;
+            }else if(keyCode == KeyEvent.VK_S){
+                paddle1Down = false;
+            }
+            // paddle 2 controls
+            if(keyCode == KeyEvent.VK_UP){
+                paddle2Up = false;
+            }else if(keyCode == KeyEvent.VK_DOWN){
+                paddle2Down = false;
+            }
         }
     }
 
@@ -265,7 +301,6 @@ public class pongexample extends JComponent implements ActionListener {
      */
     public static void main(String[] args) {
         // creates an instance of my game
-        pongexample game = new pongexample();
+        PongExample game = new PongExample();
     }
 }
-
