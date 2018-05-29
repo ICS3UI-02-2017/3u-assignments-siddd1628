@@ -106,6 +106,15 @@ public class Knockofffrogger extends JComponent implements ActionListener {
         g.fillRect(0,530,900,230);
 	g.fillRect(0,250,900,230);
         g.fillRect(0,50,900,150);
+        
+        g.setColor(Color.YELLOW);
+        g.fillRect (0,625,50,25);
+        g.fillRect (80,625,50,25);
+        g.fillRect (160,625,50,25);
+        g.fillRect (240,625,50,25);
+        g.fillRect (320,625,50,25);
+        g.fillRect (400,625,50,25);
+        g.fillRect (480,625,50,25);
 		
         // GAME DRAWING ENDS HERE
     }
