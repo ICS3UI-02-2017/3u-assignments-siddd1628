@@ -41,7 +41,7 @@ public class Knockofffrogger extends JComponent implements ActionListener {
 
     // YOUR GAME VARIABLES WOULD GO HERE
     // ball variables
-    Rectangle ball = new Rectangle(395,295,10,10);
+    Rectangle ball = new Rectangle(395,295,25,25);
     int ballAngle = 45;
     int ballSpeed = 5;
     //car variables
@@ -55,6 +55,7 @@ public class Knockofffrogger extends JComponent implements ActionListener {
     
     //create colours
      Color green = new Color(10, 168, 12);
+     Color almostmint = new Color (66, 244, 182);
     // GAME VARIABLES END HERE    
 
     
@@ -107,6 +108,7 @@ public class Knockofffrogger extends JComponent implements ActionListener {
 	g.fillRect(0,250,900,230);
         g.fillRect(0,50,900,150);
         
+        //create the yellow lines on the roads
         g.setColor(Color.YELLOW);
         g.fillRect (0,625,50,25);
         g.fillRect (80,625,50,25);
@@ -115,6 +117,38 @@ public class Knockofffrogger extends JComponent implements ActionListener {
         g.fillRect (320,625,50,25);
         g.fillRect (400,625,50,25);
         g.fillRect (480,625,50,25);
+        g.fillRect (560,625,50,25);
+        g.fillRect (640,625,50,25);
+        g.fillRect (720,625,50,25);
+        g.fillRect (800,625,50,25);
+        g.fillRect (880,625,50,25);
+        g.fillRect (0,350,50,25);
+        g.fillRect (80,350,50,25);
+        g.fillRect (160,350,50,25);
+        g.fillRect (240,350,50,25);
+        g.fillRect (320,350,50,25);
+        g.fillRect (400,350,50,25);
+        g.fillRect (480,350,50,25);
+        g.fillRect (560,350,50,25);
+        g.fillRect (640,350,50,25);
+        g.fillRect (720,350,50,25);
+        g.fillRect (800,350,50,25);
+        g.fillRect (880,350,50,25);
+        g.fillRect (0,120,50,25);
+        g.fillRect (80,120,50,25);
+        g.fillRect (160,120,50,25);
+        g.fillRect (240,120,50,25);
+        g.fillRect (320,120,50,25);
+        g.fillRect (400,120,50,25);
+        g.fillRect (480,120,50,25);
+        g.fillRect (560,120,50,25);
+        g.fillRect (640,120,50,25);
+        g.fillRect (720,120,50,25);
+        g.fillRect (800,120,50,25);
+        g.fillRect (880,120,50,25);
+        // draw the ball
+        g.setColor(almostmint);
+        g.fillRect(ball.x, ball.y, ball.width, ball.height);
 		
         // GAME DRAWING ENDS HERE
     }
@@ -136,7 +170,11 @@ public class Knockofffrogger extends JComponent implements ActionListener {
     }
 
     private void movingCars() {
-        // convert ball angle to radians to use in trig
+        
+    }
+
+    private void movingBall() {
+         // convert ball angle to radians to use in trig
         double newAngle = Math.toRadians(ballAngle);
         // determine how much to move ball x and ball y
         // using trig
@@ -145,10 +183,6 @@ public class Knockofffrogger extends JComponent implements ActionListener {
         // move the ball
         ball.x = ball.x + (int)moveX;
         ball.y = ball.y + (int)moveY;
-    }
-
-    private void movingBall() {
-         
     }
 
     private void checkforCollision() {
