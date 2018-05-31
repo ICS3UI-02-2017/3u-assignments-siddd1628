@@ -41,7 +41,7 @@ public class Knockofffrogger extends JComponent implements ActionListener {
 
     // YOUR GAME VARIABLES WOULD GO HERE
     // ball variables
-    Rectangle ball = new Rectangle(395,295,25,25);
+    Rectangle ball = new Rectangle(420,790,25,25);
     int ballAngle = 45;
     int ballSpeed = 5;
     //car variables
@@ -100,14 +100,14 @@ public class Knockofffrogger extends JComponent implements ActionListener {
         // GAME DRAWING GOES HERE
         //create the grass
         g.setColor(green);
-      g.fillRect (0,0,WIDTH, HEIGHT);
+        g.fillRect (0,0,WIDTH, HEIGHT);
         //create the road for the cars
         g.setColor(Color.BLACK);
         // create the roads
         g.fillRect(0,530,900,230);
 	g.fillRect(0,250,900,230);
         g.fillRect(0,50,900,150);
-        
+         
         //create the yellow lines on the roads
         g.setColor(Color.YELLOW);
         g.fillRect (0,625,50,25);
@@ -170,10 +170,6 @@ public class Knockofffrogger extends JComponent implements ActionListener {
     }
 
     private void movingCars() {
-        
-    }
-
-    private void movingBall() {
          // convert ball angle to radians to use in trig
         double newAngle = Math.toRadians(ballAngle);
         // determine how much to move ball x and ball y
@@ -183,6 +179,21 @@ public class Knockofffrogger extends JComponent implements ActionListener {
         // move the ball
         ball.x = ball.x + (int)moveX;
         ball.y = ball.y + (int)moveY;
+        
+         // convert ball angle to radians to use in trig
+        double newAngle = Math.toRadians(ballAngle);
+        // determine how much to move ball x and ball y
+        // using trig
+        double moveX = ballSpeed*Math.cos(newAngle);
+        double moveY = ballSpeed*Math.sin(newAngle);
+        // move the ball
+        ball.x = ball.x + (int)moveX;
+        ball.y = ball.y + (int)moveY;
+        
+    }
+
+    private void movingBall() {
+        
     }
 
     private void checkforCollision() {
