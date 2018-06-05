@@ -62,15 +62,54 @@ public class Frogger extends JComponent implements ActionListener {
     Rectangle car6 = new Rectangle(20,55,100,50);
     int car6Angle= 180;
     int car6Speed = 2;
-    Rectangle car7 = new Rectangle(725,250,25,100);
+    
+    Rectangle car7 = new Rectangle(725,260,150,70);
+    int car7Angle= 180;
+    int car7Speed = 5;
+    
+    Rectangle car8 = new Rectangle(520,260,150,70);
+    int car8Angle= 180;
+    int car8Speed = 5;
+    
+    Rectangle car9 = new Rectangle(315,260,150,70);
+    int car9Angle= 180;
+    int car9Speed = 5;
+    
+    Rectangle car10 = new Rectangle(110,260,150,70);
+    int car10Angle= 180;
+    int car10Speed = 5;
+    
+    Rectangle car11 = new Rectangle(50,400,150,70);
+    int car11Angle= 180;
+    int car11Speed = 5;
+    
+    Rectangle car12 = new Rectangle(255,400,150,70);
+    int car12Angle= 180;
+    int car12Speed = 5;
+    
+    Rectangle car13 = new Rectangle(460,400,150,70);
+    int car13Angle= 180;
+    int car13Speed = 5;
+    
+    Rectangle car14 = new Rectangle(665,400,150,70);
+    int car14Angle= 0;
+    int car14Speed = 5;
+    
     
     //create colours
      Color green = new Color(10, 168, 12);
      Color almostmint = new Color (66, 244, 182);
      Color yuckygreen = new Color (107, 244, 66);
      Color anicered = new Color (124, 11, 32);
-
-
+     Color pastelyellow = new Color (223, 244, 66);
+     Color violay = new Color (104, 66, 244);
+     Color hotpink = new Color (255, 0, 229);
+     Color purplealmostblue = new Color (29, 28, 71);
+     Color forestgreen = new Color (15, 58, 30);
+     Color dirtymustard = new Color (124, 153, 38);
+     Color terracotta = new Color (237, 118, 54);
+     Color kindofgrey = new Color (145, 126, 116);
+   
     // GAME VARIABLES END HERE    
 
     
@@ -170,10 +209,26 @@ public class Frogger extends JComponent implements ActionListener {
 	g.fillRect(car1.x, car1.y, car1.width, car1.height);
         g.setColor(anicered);
 	g.fillRect(car2.x, car2.y, car2.width, car2.height);
+        g.setColor(violay);
 	g.fillRect(car3.x, car3.y, car3.width, car3.height);
+        g.setColor(pastelyellow);
         g.fillRect(car4.x, car4.y, car4.width, car4.height);
+        g.setColor(hotpink);
         g.fillRect(car5.x, car5.y, car5.width, car5.height);
+        g.setColor(purplealmostblue);
         g.fillRect(car6.x, car6.y, car6.width, car6.height);
+        g.setColor(forestgreen);
+        g.fillRect(car7.x, car7.y, car7.width, car7.height);
+        g.setColor(dirtymustard);
+        g.fillRect(car8.x, car8.y, car8.width, car8.height);
+        g.setColor(terracotta);
+        g.fillRect(car9.x, car9.y, car9.width, car9.height);
+        g.setColor(kindofgrey);
+        g.fillRect(car10.x, car10.y, car10.width, car10.height);
+        g.fillRect(car11.x, car11.y, car11.width, car11.height);
+        g.fillRect(car12.x, car12.y, car12.width, car12.height);
+        g.fillRect(car13.x, car13.y, car13.width, car13.height);
+        g.fillRect(car14.x, car14.y, car14.width, car14.height);
         // GAME DRAWING ENDS HERE
     }
 
@@ -202,6 +257,9 @@ public class Frogger extends JComponent implements ActionListener {
         double moveX = car1Speed*Math.cos(newAngle);
         double moveY = car1Speed*Math.sin(newAngle);
         
+        
+        
+        //Cars 1-6 will be moving the same speed
         //CAR 1
         // move the car
         car1.x = car1.x + (int)moveX;
@@ -227,6 +285,45 @@ public class Frogger extends JComponent implements ActionListener {
         //CAR 6
         car6.x = car6.x + (int)moveX;
         car6.y = car6.y + (int)moveY;
+        
+        //Cars 7- 10 will be the same speed
+        // convert car angle to radians to use in trig
+        double newAngle7to10 = Math.toRadians(car7Angle);
+        // determine how much to move car x and car y
+        // using trig
+        double moveX7to10 = car7Speed*Math.cos(newAngle);
+        double moveY7to10 = car7Speed*Math.sin(newAngle);
+        
+        //CAR 7
+        car7.x = car7.x + (int)moveX7to10;
+        car7.y = car7.y + (int)moveY7to10;
+        
+        
+        //CAR 8
+        car8.x = car8.x + (int)moveX7to10;
+        car8.y = car8.y + (int)moveY7to10;
+        
+        //CAR 9
+        car9.x = car9.x + (int)moveX7to10;
+        car9.y = car9.y + (int)moveY7to10;
+        
+        //CAR 10
+        car10.x = car10.x + (int)moveX7to10;
+        car10.y = car10.y + (int)moveY7to10;
+        
+       
+        
+        
+        // convert car angle to radians to use in trig
+        double newAngle1114 = Math.toRadians(car14Angle);
+        // determine how much to move car x and car y
+        // using trig
+        double moveX1114 = car14Speed*Math.cos(newAngle);
+        double moveY1114 = car14Speed*Math.sin(newAngle);
+        //CAR 14
+        car14.x = car14.x + (int)moveX1114;
+        car14.y = car14.y + (int)moveY1114;
+        
       
         
         //whent he cars leave the screen
