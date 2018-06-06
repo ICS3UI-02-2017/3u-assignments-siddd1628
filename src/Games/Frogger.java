@@ -80,20 +80,40 @@ public class Frogger extends JComponent implements ActionListener {
     int car10Speed = 5;
     
     Rectangle car11 = new Rectangle(50,400,150,70);
-    int car11Angle= 180;
+    int car11Angle= 0;
     int car11Speed = 5;
     
     Rectangle car12 = new Rectangle(255,400,150,70);
-    int car12Angle= 180;
+    int car12Angle= 0;
     int car12Speed = 5;
     
     Rectangle car13 = new Rectangle(460,400,150,70);
-    int car13Angle= 180;
+    int car13Angle= 0;
     int car13Speed = 5;
     
     Rectangle car14 = new Rectangle(665,400,150,70);
     int car14Angle= 0;
     int car14Speed = 5;
+    
+    Rectangle car15 = new Rectangle(665,540,150,70);
+    int car15Angle= 0;
+    int car15Speed = 5;
+    
+    Rectangle car16 = new Rectangle(450,540,150,70);
+    int car16Angle= 0;
+    int car16Speed = 5;
+    
+    Rectangle car17 = new Rectangle(235,540,150,70);
+    int car17Angle= 0;
+    int car17Speed = 5;
+    
+    Rectangle car18 = new Rectangle(20,540,150,70);
+    int car18Angle= 0;
+    int car18Speed = 5;
+    
+    Rectangle car19 = new Rectangle(665,400,150,70);
+    int car19Angle= 0;
+    int car19Speed = 5;
     
     
     //create colours
@@ -229,6 +249,10 @@ public class Frogger extends JComponent implements ActionListener {
         g.fillRect(car12.x, car12.y, car12.width, car12.height);
         g.fillRect(car13.x, car13.y, car13.width, car13.height);
         g.fillRect(car14.x, car14.y, car14.width, car14.height);
+        g.fillRect(car15.x, car15.y, car15.width, car15.height);
+        g.fillRect(car16.x, car16.y, car16.width, car16.height);
+        g.fillRect(car17.x, car17.y, car17.width, car17.height);
+        g.fillRect(car18.x, car18.y, car18.width, car18.height);
         // GAME DRAWING ENDS HERE
     }
 
@@ -287,10 +311,8 @@ public class Frogger extends JComponent implements ActionListener {
         car6.y = car6.y + (int)moveY;
         
         //Cars 7- 10 will be the same speed
-        // convert car angle to radians to use in trig
+        // convert car angle to radians 
         double newAngle7to10 = Math.toRadians(car7Angle);
-        // determine how much to move car x and car y
-        // using trig
         double moveX7to10 = car7Speed*Math.cos(newAngle);
         double moveY7to10 = car7Speed*Math.sin(newAngle);
         
@@ -310,21 +332,30 @@ public class Frogger extends JComponent implements ActionListener {
         //CAR 10
         car10.x = car10.x + (int)moveX7to10;
         car10.y = car10.y + (int)moveY7to10;
+      
+        //Cars 11-14 will  be the same speef
+         // convert car angle to radians 
+        double newAngle1114 = Math.toRadians(car11Angle);
+        double moveX1114 = car11Speed*Math.cos(newAngle1114);
+        double moveY1114 = car11Speed*Math.sin(newAngle1114);
         
-       
+         //CAR 11
+        car11.x = car11.x + (int)moveX1114;
+        car11.y = car11.y + (int)moveY1114;
         
+         //CAR 12
+        car12.x = car12.x + (int)moveX1114;
+        car12.y = car12.y + (int)moveY1114;
         
-        // convert car angle to radians to use in trig
-        double newAngle1114 = Math.toRadians(car14Angle);
-        // determine how much to move car x and car y
-        // using trig
-        double moveX1114 = car14Speed*Math.cos(newAngle);
-        double moveY1114 = car14Speed*Math.sin(newAngle);
+        //CAR 13
+        car13.x = car13.x + (int)moveX1114;
+        car13.y = car13.y + (int)moveY1114;
+        
         //CAR 14
         car14.x = car14.x + (int)moveX1114;
         car14.y = car14.y + (int)moveY1114;
         
-      
+     
         
         //whent he cars leave the screen
         
