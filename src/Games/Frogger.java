@@ -42,6 +42,12 @@ public class Frogger extends JComponent implements ActionListener {
     // YOUR GAME VARIABLES WOULD GO HERE
     // ball variables
     Rectangle ball = new Rectangle(420,790,25,25);
+    //control variables
+     boolean ballUp = false;
+    boolean ballDown = false;
+    boolean ballLeft = false;
+    boolean ballRight = false;
+    int paddleSpeed = 5;
   
     //car variables
     Rectangle car1 = new Rectangle(770,55,100,50);
@@ -111,9 +117,13 @@ public class Frogger extends JComponent implements ActionListener {
     int car18Angle= 0;
     int car18Speed = 5;
     
-    Rectangle car19 = new Rectangle(665,400,150,70);
+    Rectangle car19 = new Rectangle(665,680,160,70);
     int car19Angle= 0;
     int car19Speed = 5;
+    
+    Rectangle car20 = new Rectangle(665,400,150,70);
+    int car20Angle= 0;
+    int car20Speed = 5;
     
     
     //create colours
@@ -245,14 +255,27 @@ public class Frogger extends JComponent implements ActionListener {
         g.fillRect(car9.x, car9.y, car9.width, car9.height);
         g.setColor(kindofgrey);
         g.fillRect(car10.x, car10.y, car10.width, car10.height);
+        
         g.fillRect(car11.x, car11.y, car11.width, car11.height);
+        
         g.fillRect(car12.x, car12.y, car12.width, car12.height);
+        
         g.fillRect(car13.x, car13.y, car13.width, car13.height);
+        
         g.fillRect(car14.x, car14.y, car14.width, car14.height);
+        
         g.fillRect(car15.x, car15.y, car15.width, car15.height);
+        
         g.fillRect(car16.x, car16.y, car16.width, car16.height);
+        
         g.fillRect(car17.x, car17.y, car17.width, car17.height);
+        
         g.fillRect(car18.x, car18.y, car18.width, car18.height);
+        
+        g.fillRect(car19.x, car19.y, car19.width, car19.height);
+        
+        g.fillRect(car20.x, car20.y, car20.width, car20.height);
+        
         // GAME DRAWING ENDS HERE
     }
 
@@ -355,15 +378,17 @@ public class Frogger extends JComponent implements ActionListener {
         car14.x = car14.x + (int)moveX1114;
         car14.y = car14.y + (int)moveY1114;
         
+        //when the cars leave the screen 
+    
+        
+        
      
-        
-        //whent he cars leave the screen
-        
         }
     
 
     private void movingBall() {
-        
+
+            
     }
 
     private void checkforCollision() {
@@ -409,15 +434,37 @@ public class Frogger extends JComponent implements ActionListener {
         @Override
         public void keyPressed(KeyEvent e) {
 
+             int keyCode = e.getKeyCode();
+            // W,A,S,D will be the controls for the ball 
+            if(keyCode == KeyEvent.VK_W){
+                ballUp = true;
+            }else if(keyCode == KeyEvent.VK_S){
+                ballDown = true;
+                  if(keyCode == KeyEvent.VK_D){
+                ballRight = true;
+            }else if(keyCode == KeyEvent.VK_A){
+                ballLeft = true;
+            }
         }
-
+        }
         // if a key has been released
         @Override
         public void keyReleased(KeyEvent e) {
-
+        int keyCode = e.getKeyCode();
+            // paddle 1 controls
+            if(keyCode == KeyEvent.VK_W){
+                ballUp = false;
+            }else if(keyCode == KeyEvent.VK_S){
+                ballDown = false;
+            // paddle 2 controls
+            if(keyCode == KeyEvent.VK_D){
+                ballLeft = false;
+            }else if(keyCode == KeyEvent.VK_A){
+                ballRight = false;
         }
     }
-
+    }
+    }
     @Override
     public void actionPerformed(ActionEvent ae) {
         preSetup();
