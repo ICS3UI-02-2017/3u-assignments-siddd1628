@@ -43,16 +43,16 @@ public class Frogger extends JComponent implements ActionListener {
     // ball variables
     Rectangle ball = new Rectangle(420,790,25,25);
     //control variables
-     boolean ballUp = false;
+    boolean ballUp = false;
     boolean ballDown = false;
     boolean ballLeft = false;
     boolean ballRight = false;
-    int paddleSpeed = 5;
-  
+    int ballSpeed = 5;
+
     //car variables
     Rectangle car1 = new Rectangle(770,55,100,50);
     int car1Angle = 180;
-    int car1Speed = 2;
+    int car1Speed = 6;
     Rectangle car2 = new Rectangle(620,55,100,50);
     int car2Angle = 180;
     int car2Speed = 2;
@@ -102,7 +102,7 @@ public class Frogger extends JComponent implements ActionListener {
     int car14Speed = 5;
     
     Rectangle car15 = new Rectangle(665,540,150,70);
-    int car15Angle= 0;
+    int car15Angle= 180;
     int car15Speed = 5;
     
     Rectangle car16 = new Rectangle(450,540,150,70);
@@ -296,26 +296,25 @@ public class Frogger extends JComponent implements ActionListener {
     }
 
     private void movingCars() {
-       
+        //Cars 1-6 will be moving the same speed
         // convert car angle to radians to use in trig
         double newAngle = Math.toRadians(car1Angle);
         // determine how much to move car x and car y
-        // using trig
         double moveX = car1Speed*Math.cos(newAngle);
         double moveY = car1Speed*Math.sin(newAngle);
-        
-        
-        
-        //Cars 1-6 will be moving the same speed
         //CAR 1
-        // move the car
+        
         car1.x = car1.x + (int)moveX;
         car1.y = car1.y + (int)moveY;
+       // car 1 leaves the screen
        
+     
         //CAR 2
-        // make the care move
+      
         car2.x = car2.x + (int)moveX;
         car2.y = car2.y + (int)moveY;
+        
+       
         
         //CAR 3
         car3.x = car3.x + (int)moveX;
@@ -334,15 +333,12 @@ public class Frogger extends JComponent implements ActionListener {
         car6.y = car6.y + (int)moveY;
         
         //Cars 7- 10 will be the same speed
-        // convert car angle to radians 
         double newAngle7to10 = Math.toRadians(car7Angle);
         double moveX7to10 = car7Speed*Math.cos(newAngle);
         double moveY7to10 = car7Speed*Math.sin(newAngle);
-        
         //CAR 7
         car7.x = car7.x + (int)moveX7to10;
         car7.y = car7.y + (int)moveY7to10;
-        
         
         //CAR 8
         car8.x = car8.x + (int)moveX7to10;
@@ -356,8 +352,7 @@ public class Frogger extends JComponent implements ActionListener {
         car10.x = car10.x + (int)moveX7to10;
         car10.y = car10.y + (int)moveY7to10;
       
-        //Cars 11-14 will  be the same speef
-         // convert car angle to radians 
+        //Cars 11-14 will  be the same speed
         double newAngle1114 = Math.toRadians(car11Angle);
         double moveX1114 = car11Speed*Math.cos(newAngle1114);
         double moveY1114 = car11Speed*Math.sin(newAngle1114);
@@ -377,6 +372,32 @@ public class Frogger extends JComponent implements ActionListener {
         //CAR 14
         car14.x = car14.x + (int)moveX1114;
         car14.y = car14.y + (int)moveY1114;
+        //Cars 15-19 will be the same speed
+        double newAngle1519 = Math.toRadians(car15Angle);
+        double moveX1519 = car15Speed*Math.cos(newAngle1519);
+        double moveY1519 = car15Speed*Math.sin(newAngle1519);
+        
+        //CAR 15
+        car15.x = car15.x + (int)moveX1519;
+        car15.y = car15.y + (int)moveY1519;
+        
+        //CAR 16
+        car16.x = car16.x + (int)moveX1519;
+        car16.y = car16.y + (int)moveY1519;
+        
+        //CAR 17
+        car17.x = car17.x + (int)moveX1519;
+        car17.y = car17.y + (int)moveY1519;
+        
+        //CAR 18
+        car18.x = car18.x + (int)moveX1519;
+        car18.y = car18.y + (int)moveY1519;
+        
+        //CAR 19
+        car19.x = car19.x + (int)moveX1519;
+        car19.y = car19.y + (int)moveY1519;
+        
+      
         
         //when the cars leave the screen 
     
@@ -387,8 +408,18 @@ public class Frogger extends JComponent implements ActionListener {
     
 
     private void movingBall() {
-
+     // controlling the ball
+        if(ballUp){
+            ball.y = ball.y - ballSpeed;
+        }else if(ballDown){
+            ball.y = ball.y + ballSpeed;
+        } else if (ballLeft){
+            ball.x = ball.x - ballSpeed;
+        } else if (ballRight){
+            ball.x = ball.x + ballSpeed;
             
+       
+        }
     }
 
     private void checkforCollision() {
@@ -451,12 +482,11 @@ public class Frogger extends JComponent implements ActionListener {
         @Override
         public void keyReleased(KeyEvent e) {
         int keyCode = e.getKeyCode();
-            // paddle 1 controls
+            //BALL CONTROLS
             if(keyCode == KeyEvent.VK_W){
                 ballUp = false;
             }else if(keyCode == KeyEvent.VK_S){
                 ballDown = false;
-            // paddle 2 controls
             if(keyCode == KeyEvent.VK_D){
                 ballLeft = false;
             }else if(keyCode == KeyEvent.VK_A){
