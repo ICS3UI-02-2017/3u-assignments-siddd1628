@@ -52,7 +52,7 @@ public class Frogger extends JComponent implements ActionListener {
     //car variables
     Rectangle car1 = new Rectangle(770,55,100,50);
     int car1Angle = 180;
-    int car1Speed = 6;
+    int car1Speed = 2;
     Rectangle car2 = new Rectangle(620,55,100,50);
     int car2Angle = 180;
     int car2Speed = 2;
@@ -117,14 +117,17 @@ public class Frogger extends JComponent implements ActionListener {
     int car18Angle= 0;
     int car18Speed = 5;
     
-    Rectangle car19 = new Rectangle(665,680,160,70);
+    Rectangle car19 = new Rectangle(665,540,160,70);
     int car19Angle= 0;
     int car19Speed = 5;
     
-    Rectangle car20 = new Rectangle(665,400,150,70);
+    Rectangle car20 = new Rectangle(50,665,150,70);
     int car20Angle= 0;
-    int car20Speed = 5;
+    int car20Speed = 7;
     
+    Rectangle car21 = new Rectangle(200,665,150,70);
+    int car21Angle= 0;
+    int car21Speed = 7;
     
     //create colours
      Color green = new Color(10, 168, 12);
@@ -139,6 +142,8 @@ public class Frogger extends JComponent implements ActionListener {
      Color dirtymustard = new Color (124, 153, 38);
      Color terracotta = new Color (237, 118, 54);
      Color kindofgrey = new Color (145, 126, 116);
+     Color jadeiguess = new Color (12,56,44);
+     Color limegreen = new Color (113, 255, 5);
    
     // GAME VARIABLES END HERE    
 
@@ -263,7 +268,8 @@ public class Frogger extends JComponent implements ActionListener {
         g.fillRect(car13.x, car13.y, car13.width, car13.height);
         
         g.fillRect(car14.x, car14.y, car14.width, car14.height);
-        
+        g.setColor(jadeiguess);
+
         g.fillRect(car15.x, car15.y, car15.width, car15.height);
         
         g.fillRect(car16.x, car16.y, car16.width, car16.height);
@@ -273,9 +279,10 @@ public class Frogger extends JComponent implements ActionListener {
         g.fillRect(car18.x, car18.y, car18.width, car18.height);
         
         g.fillRect(car19.x, car19.y, car19.width, car19.height);
-        
+        g.setColor(limegreen);
         g.fillRect(car20.x, car20.y, car20.width, car20.height);
         
+        g.fillRect(car21.x, car21.y, car21.width, car21.height);
         // GAME DRAWING ENDS HERE
     }
 
@@ -306,32 +313,64 @@ public class Frogger extends JComponent implements ActionListener {
         
         car1.x = car1.x + (int)moveX;
         car1.y = car1.y + (int)moveY;
-       // car 1 leaves the screen
-       
-     
+        // car 1 leaves the screen
+        if(car1.x < 0){
+        // put the car back at the start
+        car1.x = 770;
+        car1.y = 55;
+        {
+        }    
+        }
         //CAR 2
       
         car2.x = car2.x + (int)moveX;
         car2.y = car2.y + (int)moveY;
-        
-       
+ 
+        if(car2.x < 0){
+            
+        car2.x = 775;
+        car2.y = 55;
+        }
+        {
+        }
         
         //CAR 3
         car3.x = car3.x + (int)moveX;
         car3.y = car3.y + (int)moveY;
         
+        if(car3.x < 0){
+
+        car3.x = 770;
+        car3.y = 55;
+        }
+        {
+        }
         //CAR 4
         car4.x = car4.x + (int)moveX;
         car4.y = car4.y + (int)moveY;
         
+        if(car4.x < 0){
+
+        car4.x = 770;
+        car4.y = 55;
+        }
+        {
+        }
         //CAR 5
         car5.x = car5.x + (int)moveX;
         car5.y = car5.y + (int)moveY;
-        
+
+        if(car5.x < 0){
+
+        car5.x = 770;
+        car5.y = 55;
+        }
+        {
+        }
         //CAR 6
         car6.x = car6.x + (int)moveX;
         car6.y = car6.y + (int)moveY;
-        
+
         //Cars 7- 10 will be the same speed
         double newAngle7to10 = Math.toRadians(car7Angle);
         double moveX7to10 = car7Speed*Math.cos(newAngle);
@@ -340,18 +379,40 @@ public class Frogger extends JComponent implements ActionListener {
         car7.x = car7.x + (int)moveX7to10;
         car7.y = car7.y + (int)moveY7to10;
         
+        if(car7.x < 0){
+
+        car7.x = 725;
+        car7.y = 260;
+        }
+        {
+        }
         //CAR 8
         car8.x = car8.x + (int)moveX7to10;
         car8.y = car8.y + (int)moveY7to10;
         
+        if(car8.x < 0){
+
+        car8.x = 725;
+        car8.y = 260;
+        }
+        {
+        }
         //CAR 9
         car9.x = car9.x + (int)moveX7to10;
         car9.y = car9.y + (int)moveY7to10;
         
+        if(car9.x < 0){
+
+        car9.x = 725;
+        car9.y = 260;
+        }
+        {
+        }
         //CAR 10
         car10.x = car10.x + (int)moveX7to10;
         car10.y = car10.y + (int)moveY7to10;
       
+        
         //Cars 11-14 will  be the same speed
         double newAngle1114 = Math.toRadians(car11Angle);
         double moveX1114 = car11Speed*Math.cos(newAngle1114);
@@ -361,51 +422,140 @@ public class Frogger extends JComponent implements ActionListener {
         car11.x = car11.x + (int)moveX1114;
         car11.y = car11.y + (int)moveY1114;
         
+        if(car11.x > 900){
+
+        car11.x = 50;
+        car11.y = 400;
+        }
+        {
+        }
          //CAR 12
         car12.x = car12.x + (int)moveX1114;
         car12.y = car12.y + (int)moveY1114;
         
+        if(car12.x > 900){
+
+        car12.x = 50;
+        car12.y = 400;
+        }
+        {
+        }
         //CAR 13
         car13.x = car13.x + (int)moveX1114;
         car13.y = car13.y + (int)moveY1114;
         
+        if(car13.x > 900){
+
+        car13.x = 50;
+        car13.y = 400;
+        }
+        {
+        }
         //CAR 14
         car14.x = car14.x + (int)moveX1114;
         car14.y = car14.y + (int)moveY1114;
+           
+       if(car14.x > 900){
+
+        car14.x = 50;
+        car14.y = 400;
+        }
+        {
+        }
+        
+      
         //Cars 15-19 will be the same speed
         double newAngle1519 = Math.toRadians(car15Angle);
         double moveX1519 = car15Speed*Math.cos(newAngle1519);
         double moveY1519 = car15Speed*Math.sin(newAngle1519);
         
-        //CAR 15
+         //CAR 15
         car15.x = car15.x + (int)moveX1519;
         car15.y = car15.y + (int)moveY1519;
+           
+       if(car15.x < 0){
+
+        car15.x = 665;
+        car15.y = 540;
+        }
+        {
+        }
+        
+        
         
         //CAR 16
         car16.x = car16.x + (int)moveX1519;
         car16.y = car16.y + (int)moveY1519;
-        
+  
+       if(car16.x < 0){
+
+        car16.x = 665;
+        car16.y = 540;
+        }
+        {
+        }
         //CAR 17
         car17.x = car17.x + (int)moveX1519;
         car17.y = car17.y + (int)moveY1519;
         
+         if(car17.x < 0){
+
+        car17.x = 665;
+        car17.y = 540;
+        }
+        {
+        }
         //CAR 18
         car18.x = car18.x + (int)moveX1519;
         car18.y = car18.y + (int)moveY1519;
         
+         if(car18.x < 0){
+
+        car18.x = 665;
+        car18.y = 540;
+        }
+        {
+        }
         //CAR 19
         car19.x = car19.x + (int)moveX1519;
         car19.y = car19.y + (int)moveY1519;
         
-      
-        
-        //when the cars leave the screen 
-    
-        
-        
-     
+       if(car19.x < 0){
+
+        car19.x = 665;
+        car19.y = 540;
         }
+        {
+        }
+         
+    //Cars 20-whatjhqegfhsehjkfgrjh will be the same speed
+        double newAngle2019 = Math.toRadians(car20Angle);
+        double moveX2019 = car20Speed*Math.cos(newAngle2019);
+        double moveY2019 = car20Speed*Math.sin(newAngle2019);
+        
+        //CAR 20
+        car20.x = car20.x + (int)moveX2019;
+        car20.y = car20.y + (int)moveY2019;
+      
+        if(car20.x > 900) {
+            
+        car20.x = 50;
+        car20.y = 665;
+        }  
+        {
+        }
+        
+        //CAR 21
+        car21.x = car21.x + (int)moveX2019;
+        car21.y = car21.y + (int)moveX2019;
+        
+       
+        
+
+    }
     
+        
+
 
     private void movingBall() {
      // controlling the ball
@@ -418,7 +568,7 @@ public class Frogger extends JComponent implements ActionListener {
         } else if (ballRight){
             ball.x = ball.x + ballSpeed;
             
-       
+
         }
     }
 
