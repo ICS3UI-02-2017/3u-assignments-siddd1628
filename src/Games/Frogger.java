@@ -125,10 +125,15 @@ public class Frogger extends JComponent implements ActionListener {
     int car20Angle= 0;
     int car20Speed = 7;
     
-    Rectangle car21 = new Rectangle(200,665,150,70);
-    int car21Angle= 0;
-    int car21Speed = 7;
+    Rectangle car21 = new Rectangle (250,665,150,70);
     
+    Rectangle car22 = new Rectangle (450,665,150,70);
+    
+    Rectangle car23 = new Rectangle (650,665,150,70);
+    
+    Rectangle car24 = new Rectangle (850,665,150,70);
+    
+    Rectangle car25 = new Rectangle (40,170,50,50);
     //create colours
      Color green = new Color(10, 168, 12);
      Color almostmint = new Color (66, 244, 182);
@@ -282,7 +287,15 @@ public class Frogger extends JComponent implements ActionListener {
         g.setColor(limegreen);
         g.fillRect(car20.x, car20.y, car20.width, car20.height);
         
-        g.fillRect(car21.x, car21.y, car21.width, car21.height);
+        g.fillRect (car21.x, car21.y, car21.width, car21.height);
+        
+        g.fillRect (car22.x, car22.y, car22.width, car22.height);
+        
+        g.fillRect (car23.x, car23.y, car23.width, car23.height);
+       
+        g.fillRect (car24.x, car24.y, car24.width, car24.height);
+        
+         g.fillRect (car25.x,car25.y, car25.width, car25.height);
         // GAME DRAWING ENDS HERE
     }
 
@@ -547,9 +560,54 @@ public class Frogger extends JComponent implements ActionListener {
         
         //CAR 21
         car21.x = car21.x + (int)moveX2019;
-        car21.y = car21.y + (int)moveX2019;
+        car21.y = car21.y + (int)moveY2019;
+      
+        if(car21.x > 900) {
+            
+        car21.x = 50;
+        car21.y = 665;
+        }  
+        {
+        }
         
-       
+        //CAR 22
+        car22.x = car22.x + (int)moveX2019;
+        car22.y = car22.y + (int)moveY2019;
+      
+        if(car22.x > 900) {
+            
+        car22.x = 50;
+        car22.y = 665;
+        }  
+        {
+        }
+        
+        //CAR 23
+        car23.x = car23.x + (int)moveX2019;
+        car23.y = car23.y + (int)moveY2019;
+      
+        if(car23.x > 900) {
+            
+        car23.x = 50;
+        car23.y=665;
+        }     
+        {
+        }
+        
+       //CAR 24
+        car24.x = car24.x + (int)moveX2019;
+        car24.y = car24.y + (int)moveY2019;
+      
+        if(car24.x > 900) {
+            
+        car24.x = 50;
+        car24.y = 665;
+        }  
+        {
+        }
+        
+        
+        
         
 
     }
