@@ -133,7 +133,9 @@ public class Frogger extends JComponent implements ActionListener {
     
     Rectangle car24 = new Rectangle (850,665,150,70);
     
-    Rectangle car25 = new Rectangle (40,170,50,50);
+    Rectangle car25 = new Rectangle (40,155,100,35);
+    
+    Rectangle car26 = new Rectangle (40,230,100,35);
     //create colours
      Color green = new Color(10, 168, 12);
      Color almostmint = new Color (66, 244, 182);
@@ -296,6 +298,8 @@ public class Frogger extends JComponent implements ActionListener {
         g.fillRect (car24.x, car24.y, car24.width, car24.height);
         
          g.fillRect (car25.x,car25.y, car25.width, car25.height);
+         
+         g.fillRect (car26.x,car26.y, car26.width, car26.height);
         // GAME DRAWING ENDS HERE
     }
 
@@ -606,7 +610,17 @@ public class Frogger extends JComponent implements ActionListener {
         {
         }
         
-        
+        //CAR 25
+        car25.x = car25.x + (int)moveX2019;
+        car25.y = car25.y + (int)moveY2019;
+      
+        if(car25.x > 900) {
+            
+        car25.x = 50;
+        car25.y = 665;
+        }  
+        {
+        }
         
         
 
