@@ -47,7 +47,7 @@ public class Frogger extends JComponent implements ActionListener {
     boolean ballDown = false;
     boolean ballLeft = false;
     boolean ballRight = false;
-    int ballSpeed = 5;
+    int ballSpeed = 7;
 
     //car variables
     Rectangle car1 = new Rectangle(770,55,100,50);
@@ -123,7 +123,7 @@ public class Frogger extends JComponent implements ActionListener {
     
     Rectangle car20 = new Rectangle(50,665,150,70);
     int car20Angle= 0;
-    int car20Speed = 7;
+    int car20Speed = 3;
     
     Rectangle car21 = new Rectangle (250,665,150,70);
     
@@ -134,8 +134,16 @@ public class Frogger extends JComponent implements ActionListener {
     Rectangle car24 = new Rectangle (850,665,150,70);
     
     Rectangle car25 = new Rectangle (40,155,100,35);
+    int car25Angle= 0;
+    int car25Speed = 5;
     
-    Rectangle car26 = new Rectangle (40,230,100,35);
+    Rectangle car26 = new Rectangle (200,155,100,35);
+    
+    Rectangle car27 = new Rectangle (360,155,100,35);
+    
+    Rectangle car28 = new Rectangle (520,155,100,35);
+    
+    Rectangle car29 = new Rectangle (680,155,100,35);
     //create colours
      Color green = new Color(10, 168, 12);
      Color almostmint = new Color (66, 244, 182);
@@ -300,6 +308,12 @@ public class Frogger extends JComponent implements ActionListener {
          g.fillRect (car25.x,car25.y, car25.width, car25.height);
          
          g.fillRect (car26.x,car26.y, car26.width, car26.height);
+         
+         g.fillRect (car27.x,car27.y, car27.width, car27.height);
+         
+         g.fillRect (car28.x,car28.y, car28.width, car28.height);
+         
+         g.fillRect (car29.x,car29.y, car29.width, car29.height);
         // GAME DRAWING ENDS HERE
     }
 
@@ -333,7 +347,7 @@ public class Frogger extends JComponent implements ActionListener {
         // car 1 leaves the screen
         if(car1.x < 0){
         // put the car back at the start
-        car1.x = 770;
+        car1.x = 775;
         car1.y = 55;
         {
         }    
@@ -545,7 +559,7 @@ public class Frogger extends JComponent implements ActionListener {
         {
         }
          
-    //Cars 20-whatjhqegfhsehjkfgrjh will be the same speed
+    //Cars 20-24 will be the same speed
         double newAngle2019 = Math.toRadians(car20Angle);
         double moveX2019 = car20Speed*Math.cos(newAngle2019);
         double moveY2019 = car20Speed*Math.sin(newAngle2019);
@@ -555,7 +569,7 @@ public class Frogger extends JComponent implements ActionListener {
         car20.y = car20.y + (int)moveY2019;
       
         if(car20.x > 900) {
-            
+ 
         car20.x = 50;
         car20.y = 665;
         }  
@@ -610,20 +624,70 @@ public class Frogger extends JComponent implements ActionListener {
         {
         }
         
+        //Cars 25-29 will be the same speed
+        double newAngle2529 = Math.toRadians(car25Angle);
+        double moveX2529 = car25Speed*Math.cos(newAngle2529);
+        double moveY2529 = car25Speed*Math.sin(newAngle2529);
         //CAR 25
-        car25.x = car25.x + (int)moveX2019;
-        car25.y = car25.y + (int)moveY2019;
+        car25.x = car25.x + (int)moveX2529;
+        car25.y = car25.y + (int)moveY2529;
       
         if(car25.x > 900) {
             
-        car25.x = 50;
-        car25.y = 665;
+        car25.x = 40;
+        car25.y = 155;
         }  
         {
         }
         
+        //CAR 26
+        car26.x = car26.x + (int)moveX2529;
+        car26.y = car26.y + (int)moveY2529;
+      
+        if(car26.x > 900) {
+            
+        car26.x = 40;
+        car26.y = 155;
+        }  
+        {
+        }
         
-
+        //CAR 27
+        car27.x = car27.x + (int)moveX2529;
+        car27.y = car27.y + (int)moveY2529;
+      
+        if(car27.x > 900) {
+            
+        car27.x = 40;
+        car27.y = 155;
+        }  
+        {
+        }
+             
+         //CAR 28
+        car28.x = car28.x + (int)moveX2529;
+        car28.y = car28.y + (int)moveY2529;
+      
+        if(car28.x > 900) {
+            
+        car28.x = 40;
+        car28.y = 155;
+        }  
+        {
+        }
+        
+         //CAR 29
+        car29.x = car29.x + (int)moveX2529;
+        car29.y = car29.y + (int)moveY2529;
+      
+        if(car29.x > 900) {
+            
+        car29.x = 40;
+        car29.y = 155;
+        }  
+        {
+        }
+             
     }
     
         
@@ -646,6 +710,10 @@ public class Frogger extends JComponent implements ActionListener {
 
     private void checkforCollision() {
         
+         // does the ball hit paddle1
+        if(ball.intersects(car1)){
+            ballAngle = (180 + ballAngle * -1) % 360;
+        }
     }
 
     private void checkforPassing() {
@@ -693,12 +761,13 @@ public class Frogger extends JComponent implements ActionListener {
                 ballUp = true;
             }else if(keyCode == KeyEvent.VK_S){
                 ballDown = true;
+        }
                   if(keyCode == KeyEvent.VK_D){
                 ballRight = true;
             }else if(keyCode == KeyEvent.VK_A){
                 ballLeft = true;
             }
-        }
+        
         }
         // if a key has been released
         @Override
@@ -709,12 +778,13 @@ public class Frogger extends JComponent implements ActionListener {
                 ballUp = false;
             }else if(keyCode == KeyEvent.VK_S){
                 ballDown = false;
+            }
             if(keyCode == KeyEvent.VK_D){
-                ballLeft = false;
-            }else if(keyCode == KeyEvent.VK_A){
                 ballRight = false;
+            }else if(keyCode == KeyEvent.VK_A){
+                ballLeft = false;
         }
-    }
+    
     }
     }
     @Override
