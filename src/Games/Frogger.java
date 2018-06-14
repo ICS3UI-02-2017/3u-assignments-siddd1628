@@ -47,7 +47,7 @@ public class Frogger extends JComponent implements ActionListener {
     boolean ballDown = false;
     boolean ballLeft = false;
     boolean ballRight = false;
-    int ballSpeed = 7;
+    int ballSpeed = 11;
 
     //car variables
     Rectangle car1 = new Rectangle(770,55,100,50);
