@@ -42,7 +42,7 @@ public class Frogger extends JComponent implements ActionListener {
     // YOUR GAME VARIABLES WOULD GO HERE
     // ball variables
     Rectangle ball = new Rectangle(420,790,25,25);
-    //control variables
+    //ball control variables
     boolean ballUp = false;
     boolean ballDown = false;
     boolean ballLeft = false;
@@ -71,11 +71,11 @@ public class Frogger extends JComponent implements ActionListener {
     
     Rectangle car7 = new Rectangle(725,260,150,70);
     int car7Angle= 180;
-    int car7Speed = 5;
+    int car7Speed = 4;
     
     Rectangle car8 = new Rectangle(520,260,150,70);
     int car8Angle= 180;
-    int car8Speed = 5;
+    int car8Speed = 1;
     
     Rectangle car9 = new Rectangle(315,260,150,70);
     int car9Angle= 180;
@@ -123,7 +123,7 @@ public class Frogger extends JComponent implements ActionListener {
     
     Rectangle car20 = new Rectangle(50,665,150,70);
     int car20Angle= 0;
-    int car20Speed = 3;
+    int car20Speed = 1;
     
     Rectangle car21 = new Rectangle (250,665,150,70);
     
@@ -133,9 +133,11 @@ public class Frogger extends JComponent implements ActionListener {
     
     Rectangle car24 = new Rectangle (850,665,150,70);
     
+    Rectangle extracar = new Rectangle (-400,665,150,70);
+    
     Rectangle car25 = new Rectangle (40,155,100,35);
     int car25Angle= 0;
-    int car25Speed = 5;
+    int car25Speed = 4;
     
     Rectangle car26 = new Rectangle (200,155,100,35);
     
@@ -144,21 +146,22 @@ public class Frogger extends JComponent implements ActionListener {
     Rectangle car28 = new Rectangle (520,155,100,35);
     
     Rectangle car29 = new Rectangle (680,155,100,35);
+    
     //create colours
-     Color green = new Color(10, 168, 12);
-     Color almostmint = new Color (66, 244, 182);
-     Color yuckygreen = new Color (107, 244, 66);
-     Color anicered = new Color (124, 11, 32);
-     Color pastelyellow = new Color (223, 244, 66);
-     Color violay = new Color (104, 66, 244);
-     Color hotpink = new Color (255, 0, 229);
-     Color purplealmostblue = new Color (29, 28, 71);
-     Color forestgreen = new Color (15, 58, 30);
-     Color dirtymustard = new Color (124, 153, 38);
-     Color terracotta = new Color (237, 118, 54);
-     Color kindofgrey = new Color (145, 126, 116);
-     Color jadeiguess = new Color (12,56,44);
-     Color limegreen = new Color (113, 255, 5);
+    Color green = new Color(10, 168, 12);
+    Color almostmint = new Color (66, 244, 182);
+    Color yuckygreen = new Color (107, 244, 66);
+    Color anicered = new Color (124, 11, 32);
+    Color pastelyellow = new Color (223, 244, 66);
+    Color violay = new Color (104, 66, 244);
+    Color hotpink = new Color (255, 0, 229);
+    Color purplealmostblue = new Color (29, 28, 71);
+    Color forestgreen = new Color (15, 58, 30);
+    Color dirtymustard = new Color (124, 153, 38);
+    Color terracotta = new Color (237, 118, 54);
+    Color kindofgrey = new Color (145, 126, 116);
+    Color jadeiguess = new Color (12,56,44);
+    Color limegreen = new Color (113, 255, 5);
    
     // GAME VARIABLES END HERE    
 
@@ -206,8 +209,10 @@ public class Frogger extends JComponent implements ActionListener {
          //create the grass
         g.setColor(green);
         g.fillRect (0,0,WIDTH, HEIGHT);
+        
         //create the road for the cars
         g.setColor(Color.BLACK);
+        
         // create the roads
         g.fillRect(0,530,900,230);
 	g.fillRect(0,250,900,230);
@@ -251,9 +256,11 @@ public class Frogger extends JComponent implements ActionListener {
         g.fillRect (720,120,50,25);
         g.fillRect (800,120,50,25);
         g.fillRect (880,120,50,25);
+        
         // draw the ball
         g.setColor(almostmint);
         g.fillRect(ball.x, ball.y, ball.width, ball.height);
+        
         //draw the cars
         g.setColor(yuckygreen);
 	g.fillRect(car1.x, car1.y, car1.width, car1.height);
@@ -314,6 +321,8 @@ public class Frogger extends JComponent implements ActionListener {
          g.fillRect (car28.x,car28.y, car28.width, car28.height);
          
          g.fillRect (car29.x,car29.y, car29.width, car29.height);
+     
+         g.fillRect (extracar.x,extracar.y, extracar.width, extracar.height);
         // GAME DRAWING ENDS HERE
     }
 
@@ -340,8 +349,8 @@ public class Frogger extends JComponent implements ActionListener {
         // determine how much to move car x and car y
         double moveX = car1Speed*Math.cos(newAngle);
         double moveY = car1Speed*Math.sin(newAngle);
-        //CAR 1
         
+        //CAR 1
         car1.x = car1.x + (int)moveX;
         car1.y = car1.y + (int)moveY;
         // car 1 leaves the screen
@@ -352,8 +361,8 @@ public class Frogger extends JComponent implements ActionListener {
         {
         }    
         }
+        
         //CAR 2
-      
         car2.x = car2.x + (int)moveX;
         car2.y = car2.y + (int)moveY;
  
@@ -376,6 +385,7 @@ public class Frogger extends JComponent implements ActionListener {
         }
         {
         }
+        
         //CAR 4
         car4.x = car4.x + (int)moveX;
         car4.y = car4.y + (int)moveY;
@@ -387,6 +397,7 @@ public class Frogger extends JComponent implements ActionListener {
         }
         {
         }
+        
         //CAR 5
         car5.x = car5.x + (int)moveX;
         car5.y = car5.y + (int)moveY;
@@ -398,6 +409,7 @@ public class Frogger extends JComponent implements ActionListener {
         }
         {
         }
+        
         //CAR 6
         car6.x = car6.x + (int)moveX;
         car6.y = car6.y + (int)moveY;
@@ -406,6 +418,7 @@ public class Frogger extends JComponent implements ActionListener {
         double newAngle7to10 = Math.toRadians(car7Angle);
         double moveX7to10 = car7Speed*Math.cos(newAngle);
         double moveY7to10 = car7Speed*Math.sin(newAngle);
+        
         //CAR 7
         car7.x = car7.x + (int)moveX7to10;
         car7.y = car7.y + (int)moveY7to10;
@@ -417,6 +430,7 @@ public class Frogger extends JComponent implements ActionListener {
         }
         {
         }
+        
         //CAR 8
         car8.x = car8.x + (int)moveX7to10;
         car8.y = car8.y + (int)moveY7to10;
@@ -428,6 +442,7 @@ public class Frogger extends JComponent implements ActionListener {
         }
         {
         }
+        
         //CAR 9
         car9.x = car9.x + (int)moveX7to10;
         car9.y = car9.y + (int)moveY7to10;
@@ -439,6 +454,7 @@ public class Frogger extends JComponent implements ActionListener {
         }
         {
         }
+        
         //CAR 10
         car10.x = car10.x + (int)moveX7to10;
         car10.y = car10.y + (int)moveY7to10;
@@ -471,6 +487,7 @@ public class Frogger extends JComponent implements ActionListener {
         }
         {
         }
+        
         //CAR 13
         car13.x = car13.x + (int)moveX1114;
         car13.y = car13.y + (int)moveY1114;
@@ -482,11 +499,12 @@ public class Frogger extends JComponent implements ActionListener {
         }
         {
         }
+        
         //CAR 14
         car14.x = car14.x + (int)moveX1114;
         car14.y = car14.y + (int)moveY1114;
            
-       if(car14.x > 900){
+        if(car14.x > 900){
 
         car14.x = 50;
         car14.y = 400;
@@ -504,54 +522,55 @@ public class Frogger extends JComponent implements ActionListener {
         car15.x = car15.x + (int)moveX1519;
         car15.y = car15.y + (int)moveY1519;
            
-       if(car15.x < 0){
+        if(car15.x < 0){
 
         car15.x = 665;
         car15.y = 540;
         }
         {
         }
-        
-        
-        
+
         //CAR 16
         car16.x = car16.x + (int)moveX1519;
         car16.y = car16.y + (int)moveY1519;
   
-       if(car16.x < 0){
+        if(car16.x < 0){
 
         car16.x = 665;
         car16.y = 540;
         }
         {
         }
+        
         //CAR 17
         car17.x = car17.x + (int)moveX1519;
         car17.y = car17.y + (int)moveY1519;
         
-         if(car17.x < 0){
+        if(car17.x < 0){
 
         car17.x = 665;
         car17.y = 540;
         }
         {
         }
+        
         //CAR 18
         car18.x = car18.x + (int)moveX1519;
         car18.y = car18.y + (int)moveY1519;
         
-         if(car18.x < 0){
+        if(car18.x < 0){
 
         car18.x = 665;
         car18.y = 540;
         }
         {
         }
+        
         //CAR 19
         car19.x = car19.x + (int)moveX1519;
         car19.y = car19.y + (int)moveY1519;
         
-       if(car19.x < 0){
+        if(car19.x < 0){
 
         car19.x = 665;
         car19.y = 540;
@@ -620,6 +639,17 @@ public class Frogger extends JComponent implements ActionListener {
             
         car24.x = 50;
         car24.y = 665;
+        }  
+        {
+        }
+        //Extracar
+        extracar.x = extracar.x + (int)moveX2019;
+        extracar.y = extracar.y + (int)moveY2019;
+      
+        if(extracar.x > 900) {
+            
+        extracar.x = 50;
+        extracar.y = 665;
         }  
         {
         }
@@ -694,7 +724,7 @@ public class Frogger extends JComponent implements ActionListener {
 
 
     private void movingBall() {
-     // controlling the ball
+     // controlling the ball using the booleans created earlier
         if(ballUp){
             ball.y = ball.y - ballSpeed;
         }else if(ballDown){
@@ -710,14 +740,138 @@ public class Frogger extends JComponent implements ActionListener {
 
     private void checkforCollision() {
         
-         // does the ball hit paddle1
+         // if the ball collides with a car, start again
         if(ball.intersects(car1)){
-            ballAngle = (180 + ballAngle * -1) % 360;
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car2)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        
+        if(ball.intersects(car3)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car4)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car5)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car6)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car7)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+         
+        if(ball.intersects(car8)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car9)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car10)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car11)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car12)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car13)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car14)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car15)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car16)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car17)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car18)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car19)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car20)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car21)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car22)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car23)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car24)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car25)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car26)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car27)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car28)){
+           ball.x = 420;
+           ball.y = 790;
+        }
+        if(ball.intersects(car29)){
+           ball.x = 420;
+           ball.y = 790;
         }
     }
-
+{
+}
+   
+    
     private void checkforPassing() {
         
+      if(ball.y > HEIGHT) {
+            
+        ball.x = 420;
+        ball.y = 790;
+      
+    }
     }
 
     // Used to implement any of the Mouse Actions
