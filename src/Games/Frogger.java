@@ -332,7 +332,7 @@ public class Frogger extends JComponent implements ActionListener {
          
           // draw the scores
         g.setFont(biggerFont);
-        g.drawString("" + score1, WIDTH/2 - 150, 50);
+        g.drawString("" + score1, 420, 50);
         // GAME DRAWING ENDS HERE
     }
 
@@ -878,9 +878,14 @@ public class Frogger extends JComponent implements ActionListener {
     private void checkforPassing() {
         
           // ball passing the cars
-          if(ball.x + ball.width > HEIGHT){
+          if(ball.y < 50){
             // give the player a goal
             score1++;
+           ball.y = 790;
+           ball.x = 420;
+          
+            
+          
         }
     }
 
