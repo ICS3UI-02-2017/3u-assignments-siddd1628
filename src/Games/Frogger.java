@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -162,7 +163,12 @@ public class Frogger extends JComponent implements ActionListener {
     Color kindofgrey = new Color (145, 126, 116);
     Color jadeiguess = new Color (12,56,44);
     Color limegreen = new Color (113, 255, 5);
+    
+     // player score
+    int score1 = 0;
    
+    // create a custom font
+    Font biggerFont = new Font("comic sans", Font.BOLD, 36);
     // GAME VARIABLES END HERE    
 
     
@@ -323,6 +329,10 @@ public class Frogger extends JComponent implements ActionListener {
          g.fillRect (car29.x,car29.y, car29.width, car29.height);
      
          g.fillRect (extracar.x,extracar.y, extracar.width, extracar.height);
+         
+          // draw the scores
+        g.setFont(biggerFont);
+        g.drawString("" + score1, WIDTH/2 - 150, 50);
         // GAME DRAWING ENDS HERE
     }
 
@@ -858,6 +868,7 @@ public class Frogger extends JComponent implements ActionListener {
         if(ball.intersects(car29)){
            ball.x = 420;
            ball.y = 790;
+           
         }
     }
 {
@@ -866,12 +877,11 @@ public class Frogger extends JComponent implements ActionListener {
     
     private void checkforPassing() {
         
-      if(ball.y > HEIGHT) {
-            
-        ball.x = 420;
-        ball.y = 790;
-      
-    }
+          // ball passing the cars
+          if(ball.x + ball.width > HEIGHT){
+            // give the player a goal
+            score1++;
+        }
     }
 
     // Used to implement any of the Mouse Actions
