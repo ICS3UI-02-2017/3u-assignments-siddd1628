@@ -333,6 +333,7 @@ public class Frogger extends JComponent implements ActionListener {
           // draw the scores
         g.setFont(biggerFont);
         g.drawString("" + score1, 420, 50);
+        
         // GAME DRAWING ENDS HERE
     }
 
